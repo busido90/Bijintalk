@@ -73,7 +73,7 @@
     // メッセージの送信処理を完了する (画面上にメッセージが表示される)
     [self finishSendingMessageAnimated:YES];
     // 擬似的に自動でメッセージを受信
-    [self receiveAutoMessage];
+    [self receiveMessage];
 }
 
 - (id<JSQMessageData>)collectionView:(JSQMessagesCollectionView *)collectionView messageDataForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -112,7 +112,7 @@
 #pragma mark - Auto Message
 
 // ⑥ 返信メッセージを受信する (自動)
-- (void)receiveAutoMessage
+- (void)receiveMessage
 {
     // 1秒後にメッセージを受信する
     [NSTimer scheduledTimerWithTimeInterval:1
@@ -129,6 +129,9 @@
     // 新しいメッセージデータを追加する
 
     NSArray *reply = [self.messages valueForKey:@"text"];
+    
+    
+    
 //    NSLog(@"%@", [reply lastObject]);
     NSString *say = [reply lastObject];
     
@@ -147,6 +150,11 @@
         JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
                                                   displayName:@"underscore"
                                                          text:@"Really! I love you!!!"];
+        [self.messages addObject:message];
+    } else if ([say isEqual: @"おはよう "]) {
+        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
+                                                  displayName:@"underscore"
+                                                         text:@"おはよう!!!"];
         [self.messages addObject:message];
     } else {
         JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
