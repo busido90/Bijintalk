@@ -129,11 +129,35 @@
     // 新しいメッセージデータを追加する
 
     NSArray *reply = [self.messages valueForKey:@"text"];
-    
-    
-    
 //    NSLog(@"%@", [reply lastObject]);
     NSString *say = [reply lastObject];
+    
+    NSString *origin = @"http://自分で所有しているドメイン?";
+    NSString *url = [NSString stringWithFormat:@"%@username=%@&password=%@",origin,name,pass];
+                     
+                     
+                     @try {
+                         // NSURLからNSURLRequest
+                         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+                         // サーバーとの通信を行う(URLRequest)
+                         NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+                         // データを取ってくる
+                         NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
+                         
+                         NSLog(@"%@",array);
+                         
+                     } @catch(NSException *exception) {
+                         NSLog(@"[ERROR]\nurl[%@]\nexception[%@]", encodeName, exception);
+                         
+                         //AlertViewの設定
+                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"インターネット接続エラー" message:@"時間をおいてお試しください" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+                         
+                         [alert show];
+                         
+                     } @finally {
+                         NSLog(@"終了");
+                     }
+                     NSLog(@"check");
     
     
     if ([say isEqual: @"fine"]) {
