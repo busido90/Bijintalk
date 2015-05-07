@@ -128,64 +128,63 @@
     [JSQSystemSoundPlayer jsq_playMessageSentSound];
     // 新しいメッセージデータを追加する
 
-    NSArray *reply = [self.messages valueForKey:@"text"];
+    NSArray *message = [self.messages valueForKey:@"text"];
 //    NSLog(@"%@", [reply lastObject]);
-    NSString *say = [reply lastObject];
+    NSString *say = [message lastObject];
     
-    NSString *origin = @"http://自分で所有しているドメイン?";
-    NSString *url = [NSString stringWithFormat:@"%@username=%@&password=%@",origin,name,pass];
+    //エンコード
+    NSString* encodesay = [say
+                            stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    NSString *origin = @"http://192.168.33.20/PHP/index.php?";
+    NSString *url = [NSString stringWithFormat:@"%@mention=%@",origin,encodesay];
                      
-                     
-                     @try {
-                         // NSURLからNSURLRequest
-                         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-                         // サーバーとの通信を行う(URLRequest)
-                         NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-                         // データを取ってくる
-                         NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
-                         
-                         NSLog(@"%@",array);
-                         
-                     } @catch(NSException *exception) {
-                         NSLog(@"[ERROR]\nurl[%@]\nexception[%@]", encodeName, exception);
-                         
-                         //AlertViewの設定
-                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"インターネット接続エラー" message:@"時間をおいてお試しください" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-                         
-                         [alert show];
-                         
-                     } @finally {
-                         NSLog(@"終了");
-                     }
-                     NSLog(@"check");
+
+    // Requestを作成
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+    // サーバーとの通信を行う
+    NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    
+    // JSONをパース
+    NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
+    
+    //デコード
+    NSString* reply = [[array valueForKeyPath:@"reply"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    NSLog(@"%@",reply);
+    
+    JSQMessage *reply2 = [JSQMessage messageWithSenderId:@"user2"
+                                              displayName:@"underscore"
+                                                     text:[array valueForKeyPath:@"reply"]];
+    [self.messages addObject:reply2];
     
     
-    if ([say isEqual: @"fine"]) {
-        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
-                                                  displayName:@"underscore"
-                                                         text:@"Good!"];
-        [self.messages addObject:message];
-    } else if ([say isEqual: @"Can you marry me?"]) {
-        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
-                                                  displayName:@"underscore"
-                                                         text:@"Sure!"];
-        [self.messages addObject:message];
-    } else if ([say isEqual: @"Really?"]) {
-        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
-                                                  displayName:@"underscore"
-                                                         text:@"Really! I love you!!!"];
-        [self.messages addObject:message];
-    } else if ([say isEqual: @"おはよう "]) {
-        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
-                                                  displayName:@"underscore"
-                                                         text:@"おはよう!!!"];
-        [self.messages addObject:message];
-    } else {
-        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
-                                                  displayName:@"underscore"
-                                                         text:@"How are you?"];
-        [self.messages addObject:message];
-    }
+//    if ([say isEqual: @"fine"]) {
+//        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
+//                                                  displayName:@"underscore"
+//                                                         text:@"Good!"];
+//        [self.messages addObject:message];
+//    } else if ([say isEqual: @"Can you marry me?"]) {
+//        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
+//                                                  displayName:@"underscore"
+//                                                         text:@"Sure!"];
+//        [self.messages addObject:message];
+//    } else if ([say isEqual: @"Really?"]) {
+//        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
+//                                                  displayName:@"underscore"
+//                                                         text:@"Really! I love you!!!"];
+//        [self.messages addObject:message];
+//    } else if ([say isEqual: @"おはよう "]) {
+//        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
+//                                                  displayName:@"underscore"
+//                                                         text:@"おはよう!!!"];
+//        [self.messages addObject:message];
+//    } else {
+//        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
+//                                                  displayName:@"underscore"
+//                                                         text:@"How are you?"];
+//        [self.messages addObject:message];
+//    }
 
 
     

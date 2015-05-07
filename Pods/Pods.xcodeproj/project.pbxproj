@@ -161,7 +161,6 @@
 		41FD35A158F304D976552BCD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		44E5A3C49B4746480835858F /* JSQMessagesCollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesCollectionViewLayoutAttributes.h; path = JSQMessagesViewController/Layout/JSQMessagesCollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
 		4596F7EA39B8B66AE3AA048E /* JSQMessagesAvatarImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQMessagesAvatarImage.h; path = JSQMessagesViewController/Model/JSQMessagesAvatarImage.h; sourceTree = "<group>"; };
-		469F66A21AF653E300D6234C /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		47000304C8F7CEE1ACD5147A /* JSQMessagesToolbarButtonFactory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSQMessagesToolbarButtonFactory.m; path = JSQMessagesViewController/Factories/JSQMessagesToolbarButtonFactory.m; sourceTree = "<group>"; };
 		496A3E6E410E64616B86A49F /* JSQLocationMediaItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSQLocationMediaItem.h; path = JSQMessagesViewController/Model/JSQLocationMediaItem.h; sourceTree = "<group>"; };
 		49CC52110274887420F424B0 /* Pods-002_BijinJSQMessageView-JSQSystemSoundPlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-002_BijinJSQMessageView-JSQSystemSoundPlayer-prefix.pch"; sourceTree = "<group>"; };
@@ -349,7 +348,6 @@
 			isa = PBXGroup;
 			children = (
 				5255CCEA961300FFAD535610 /* Pods-002_BijinJSQMessageView-JSQMessagesViewController.xcconfig */,
-				469F66A21AF653E300D6234C /* images */,
 				3B8DF11B177523C3046B6555 /* Pods-002_BijinJSQMessageView-JSQMessagesViewController-Private.xcconfig */,
 				68A2CC38426423DBD2D51057 /* Pods-002_BijinJSQMessageView-JSQMessagesViewController-dummy.m */,
 				F06EA2F0B075260ACD3DEEED /* Pods-002_BijinJSQMessageView-JSQMessagesViewController-prefix.pch */,

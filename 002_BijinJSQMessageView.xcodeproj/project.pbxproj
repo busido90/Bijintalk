@@ -16,7 +16,6 @@
 		469F66541AF6232500D6234C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469F66531AF6232500D6234C /* Images.xcassets */; };
 		469F66571AF6232500D6234C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 469F66551AF6232500D6234C /* LaunchScreen.xib */; };
 		469F66631AF6232500D6234C /* _02_BijinJSQMessageViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 469F66621AF6232500D6234C /* _02_BijinJSQMessageViewTests.m */; };
-		469F66701AF6372800D6234C /* images in Resources */ = {isa = PBXBuildFile; fileRef = 469F666F1AF6372800D6234C /* images */; };
 		469F66A51AF660D700D6234C /* User1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 469F66A31AF660D700D6234C /* User1.jpeg */; };
 		469F66A61AF660D700D6234C /* User2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 469F66A41AF660D700D6234C /* User2.jpeg */; };
 /* End PBXBuildFile section */
@@ -47,7 +46,6 @@
 		469F665C1AF6232500D6234C /* 002_BijinJSQMessageViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 002_BijinJSQMessageViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		469F66611AF6232500D6234C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		469F66621AF6232500D6234C /* _02_BijinJSQMessageViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _02_BijinJSQMessageViewTests.m; sourceTree = "<group>"; };
-		469F666F1AF6372800D6234C /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		469F66A31AF660D700D6234C /* User1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = User1.jpeg; path = images/User1.jpeg; sourceTree = "<group>"; };
 		469F66A41AF660D700D6234C /* User2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = User2.jpeg; path = images/User2.jpeg; sourceTree = "<group>"; };
 		7D5863CA4C2E5B1121566723 /* Pods-002_BijinJSQMessageView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-002_BijinJSQMessageView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-002_BijinJSQMessageView/Pods-002_BijinJSQMessageView.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 			isa = PBXGroup;
 			children = (
 				469F66441AF6232500D6234C /* Info.plist */,
-				469F666F1AF6372800D6234C /* images */,
 				469F66451AF6232500D6234C /* main.m */,
 			);
 			name = "Supporting Files";
@@ -237,7 +234,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				469F66701AF6372800D6234C /* images in Resources */,
 				469F66A61AF660D700D6234C /* User2.jpeg in Resources */,
 				469F66521AF6232500D6234C /* Main.storyboard in Resources */,
 				469F66571AF6232500D6234C /* LaunchScreen.xib in Resources */,
