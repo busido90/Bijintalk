@@ -26,6 +26,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    //背景画像設定
+    UIImage *backgroundImage = [UIImage imageNamed:@"User1.jpeg"];
+    super.collectionView.backgroundColor= [UIColor colorWithPatternImage:backgroundImage];
+    
+    //上部の画面表示
+    self.collectionView = UICollectionElementKindSectionHeader;
+    
     
     // ① 自分の senderId, senderDisplayName を設定
     self.senderId = @"user1";
@@ -54,6 +61,12 @@
 
     
         
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.collectionView.collectionViewLayout.springinessEnabled = YES;
 }
 
 // ⑤ Sendボタンが押下されたときに呼ばれる
