@@ -30,9 +30,21 @@
     UIImage *backgroundImage = [UIImage imageNamed:@"User1.jpeg"];
     super.collectionView.backgroundColor= [UIColor colorWithPatternImage:backgroundImage];
     
-    //上部の画面表示
-    self.collectionView = UICollectionElementKindSectionHeader;
+    //上部の画面表示 結局使わず
+//    self.collectionView = UICollectionElementKindSectionHeader;
+//    self.showLoadEarlierMessagesHeader = YES;
+//    self.topContentAdditionalInset=15.0f;
     
+    // UIBarButtonItemに表示文字列を渡して、インスタンス化します。
+    UIBarButtonItem *btn = [[UIBarButtonItem alloc]
+                            initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize
+                            target:self
+                            action:@selector(gotoConfig:)];
+    
+
+    // なお右側に追加する時は、以下のようにする。
+     self.navigationItem.rightBarButtonItem = btn;
+
     
     // ① 自分の senderId, senderDisplayName を設定
     self.senderId = @"user1";
@@ -62,6 +74,14 @@
     
         
 }
+
+- (void)gotoConfig:(id)sender
+{
+    ConfigViewController *Config = [self.storyboard instantiateViewControllerWithIdentifier:@"Config"];//手順7で付けた名前
+
+    [[self navigationController] pushViewController:Config animated:YES];
+}
+
 
 - (void)viewDidAppear:(BOOL)animated
 {
