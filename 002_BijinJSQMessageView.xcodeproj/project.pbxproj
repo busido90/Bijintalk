@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		2AFF3FC168BFA94E35891413 /* libPods-002_BijinJSQMessageView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CD875DF5BBD36F412DC511C /* libPods-002_BijinJSQMessageView.a */; };
 		4699183C1B005115001F79EE /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4699183B1B005115001F79EE /* ConfigViewController.m */; };
-		469918401B005FE4001F79EE /* images in Resources */ = {isa = PBXBuildFile; fileRef = 4699183F1B005FE4001F79EE /* images */; };
+		4699184E1B00C825001F79EE /* Bijo.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 469918481B00C825001F79EE /* Bijo.jpeg */; };
+		4699184F1B00C825001F79EE /* BijoChange.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 469918491B00C825001F79EE /* BijoChange.jpeg */; };
+		469918501B00C825001F79EE /* BijoConfig.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4699184A1B00C825001F79EE /* BijoConfig.jpeg */; };
+		469918511B00C825001F79EE /* BijoPicture.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4699184B1B00C825001F79EE /* BijoPicture.jpeg */; };
+		469918521B00C825001F79EE /* User1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4699184C1B00C825001F79EE /* User1.jpeg */; };
+		469918531B00C825001F79EE /* User2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4699184D1B00C825001F79EE /* User2.jpeg */; };
 		469F66461AF6232500D6234C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 469F66451AF6232500D6234C /* main.m */; };
 		469F66491AF6232500D6234C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 469F66481AF6232500D6234C /* AppDelegate.m */; };
-		469F664C1AF6232500D6234C /* _02_BijinJSQMessageView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 469F664A1AF6232500D6234C /* _02_BijinJSQMessageView.xcdatamodeld */; };
 		469F664F1AF6232500D6234C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469F664E1AF6232500D6234C /* ViewController.m */; };
 		469F66521AF6232500D6234C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469F66501AF6232500D6234C /* Main.storyboard */; };
 		469F66541AF6232500D6234C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469F66531AF6232500D6234C /* Images.xcassets */; };
@@ -34,13 +38,17 @@
 		2CD875DF5BBD36F412DC511C /* libPods-002_BijinJSQMessageView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-002_BijinJSQMessageView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4699183A1B005115001F79EE /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		4699183B1B005115001F79EE /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
-		4699183F1B005FE4001F79EE /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		469918481B00C825001F79EE /* Bijo.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Bijo.jpeg; sourceTree = "<group>"; };
+		469918491B00C825001F79EE /* BijoChange.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BijoChange.jpeg; sourceTree = "<group>"; };
+		4699184A1B00C825001F79EE /* BijoConfig.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BijoConfig.jpeg; sourceTree = "<group>"; };
+		4699184B1B00C825001F79EE /* BijoPicture.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BijoPicture.jpeg; sourceTree = "<group>"; };
+		4699184C1B00C825001F79EE /* User1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = User1.jpeg; sourceTree = "<group>"; };
+		4699184D1B00C825001F79EE /* User2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = User2.jpeg; sourceTree = "<group>"; };
 		469F66401AF6232500D6234C /* 002_BijinJSQMessageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 002_BijinJSQMessageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		469F66441AF6232500D6234C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		469F66451AF6232500D6234C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		469F66471AF6232500D6234C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		469F66481AF6232500D6234C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		469F664B1AF6232500D6234C /* _02_BijinJSQMessageView.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = _02_BijinJSQMessageView.xcdatamodel; sourceTree = "<group>"; };
 		469F664D1AF6232500D6234C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		469F664E1AF6232500D6234C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		469F66511AF6232500D6234C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +80,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		469918471B00C825001F79EE /* images */ = {
+			isa = PBXGroup;
+			children = (
+				469918481B00C825001F79EE /* Bijo.jpeg */,
+				469918491B00C825001F79EE /* BijoChange.jpeg */,
+				4699184A1B00C825001F79EE /* BijoConfig.jpeg */,
+				4699184B1B00C825001F79EE /* BijoPicture.jpeg */,
+				4699184C1B00C825001F79EE /* User1.jpeg */,
+				4699184D1B00C825001F79EE /* User2.jpeg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		469F66371AF6232500D6234C = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +125,6 @@
 				469F66501AF6232500D6234C /* Main.storyboard */,
 				469F66531AF6232500D6234C /* Images.xcassets */,
 				469F66551AF6232500D6234C /* LaunchScreen.xib */,
-				469F664A1AF6232500D6234C /* _02_BijinJSQMessageView.xcdatamodeld */,
 				469F66431AF6232500D6234C /* Supporting Files */,
 			);
 			path = 002_BijinJSQMessageView;
@@ -113,7 +133,7 @@
 		469F66431AF6232500D6234C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4699183F1B005FE4001F79EE /* images */,
+				469918471B00C825001F79EE /* images */,
 				469F66441AF6232500D6234C /* Info.plist */,
 				469F66451AF6232500D6234C /* main.m */,
 			);
@@ -236,9 +256,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				469918401B005FE4001F79EE /* images in Resources */,
 				469F66521AF6232500D6234C /* Main.storyboard in Resources */,
+				4699184E1B00C825001F79EE /* Bijo.jpeg in Resources */,
+				469918511B00C825001F79EE /* BijoPicture.jpeg in Resources */,
+				4699184F1B00C825001F79EE /* BijoChange.jpeg in Resources */,
+				469918531B00C825001F79EE /* User2.jpeg in Resources */,
+				469918501B00C825001F79EE /* BijoConfig.jpeg in Resources */,
 				469F66571AF6232500D6234C /* LaunchScreen.xib in Resources */,
+				469918521B00C825001F79EE /* User1.jpeg in Resources */,
 				469F66541AF6232500D6234C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +315,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				469F664C1AF6232500D6234C /* _02_BijinJSQMessageView.xcdatamodeld in Sources */,
 				469F66491AF6232500D6234C /* AppDelegate.m in Sources */,
 				4699183C1B005115001F79EE /* ConfigViewController.m in Sources */,
 				469F664F1AF6232500D6234C /* ViewController.m in Sources */,
@@ -503,19 +527,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		469F664A1AF6232500D6234C /* _02_BijinJSQMessageView.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				469F664B1AF6232500D6234C /* _02_BijinJSQMessageView.xcdatamodel */,
-			);
-			currentVersion = 469F664B1AF6232500D6234C /* _02_BijinJSQMessageView.xcdatamodel */;
-			path = _02_BijinJSQMessageView.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 469F66381AF6232500D6234C /* Project object */;
 }

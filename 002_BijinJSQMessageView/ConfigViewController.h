@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ConfigViewController : UIViewController
+@interface ConfigViewController : UIViewController {
+    IBOutlet UIScrollView *ConfigScrollView;
+
+}
+@property (nonatomic, retain) IBOutlet UIScrollView *ConfigScrollView;
 
 @end

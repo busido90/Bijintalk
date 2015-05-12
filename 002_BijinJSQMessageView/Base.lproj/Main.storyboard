@@ -30,20 +30,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BijoChange.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="qka-9F-L84">
-                                <rect key="frame" x="0.0" y="64" width="320" height="159"/>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BijoConfig.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="pPP-nS-Rh7">
-                                <rect key="frame" x="0.0" y="378" width="320" height="159"/>
-                            </imageView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BijoPicture.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="LpK-em-0Tx">
-                                <rect key="frame" x="0.0" y="221" width="320" height="159"/>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4V5-cF-chV">
+                                <rect key="frame" x="-2" y="64" width="325" height="215"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="CONFIG" id="TF8-pL-Oqg"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="ConfigScrollView" destination="4V5-cF-chV" id="ZVC-B2-2Gt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gyw-FA-hU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,9 +65,4 @@
             <point key="canvasLocation" x="305" y="323"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="BijoChange.jpeg" width="319" height="159"/>
-        <image name="BijoConfig.jpeg" width="319" height="159"/>
-        <image name="BijoPicture.jpeg" width="319" height="159"/>
-    </resources>
 </document>
