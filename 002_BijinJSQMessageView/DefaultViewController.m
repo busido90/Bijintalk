@@ -18,79 +18,64 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIImageView *tapView1 = [[UIImageView alloc]init];
     //タップを有効化する。
-    tapView1.userInteractionEnabled = YES;
-    //タグを設定する。
-    tapView1.tag = 1;
+    _User1ImageView.userInteractionEnabled = YES;
     
-    UIImageView *tapView2 = [[UIImageView alloc]init];
     //タップを有効化する。
-    tapView2.userInteractionEnabled = YES;
-    //タグを設定する。
-    tapView2.tag = 2;
+    _User2ImageView.userInteractionEnabled = YES;
     
-    UIImageView *tapView3 = [[UIImageView alloc]init];
     //タップを有効化する。
-    tapView3.userInteractionEnabled = YES;
-    //タグを設定する。
-    tapView3.tag = 1;
+    _User3ImageView.userInteractionEnabled = YES;
     
-    UIImageView *tapView4 = [[UIImageView alloc]init];
     //タップを有効化する。
-    tapView4.userInteractionEnabled = YES;
-    //タグを設定する。
-    tapView4.tag = 4;
+    _User4ImageView.userInteractionEnabled = YES;
     
-    UIImageView *tapView5 = [[UIImageView alloc]init];
     //タップを有効化する。
-    tapView5.userInteractionEnabled = YES;
-    //タグを設定する。
-    tapView5.tag = 5;
+    _User5ImageView.userInteractionEnabled = YES;
     
-    UIImageView *tapView6 = [[UIImageView alloc]init];
     //タップを有効化する。
-    tapView6.userInteractionEnabled = YES;
-    //タグを設定する。
-    tapView6.tag = 6;
+    _User6ImageView.userInteractionEnabled = YES;
     
-    UIImageView *tapView7 = [[UIImageView alloc]init];
     //タップを有効化する。
-    tapView7.userInteractionEnabled = YES;
-    //タグを設定する。
-    tapView7.tag = 7;
+    _User7ImageView.userInteractionEnabled = YES;
     
-    UIImageView *tapView8 = [[UIImageView alloc]init];
     //タップを有効化する。
-    tapView8.userInteractionEnabled = YES;
-    //タグを設定する。
-    tapView8.tag = 8;
+    _User8ImageView.userInteractionEnabled = YES;
     
-    UIImageView *tapView9 = [[UIImageView alloc]init];
     //タップを有効化する。
-    tapView9.userInteractionEnabled = YES;
-    //タグを設定する。
-    tapView9.tag = 9;
+    _User9ImageView.userInteractionEnabled = YES;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     
     UITouch *touch = [touches anyObject];
-    switch (touch.view.tag) {
-        case 1:
-            // 1のタグがタップされた場合の処理を記述
-            break;
-        case 2:
-            // 2のタグがタップされた場合の処理を記述
-            break;
-        case 3:
-            // 3のタグがタップされた場合の処理を記述
-            break;
-        default:
-            break;
+    if (touch.view.tag == 1) {
+        ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
+        parent.backgroundImage = [UIImage imageNamed:@"User1.jpeg"];
+        parent.icon = [UIImage imageNamed:@"User1icon.jpeg"];
+        [parent viewDidLoad];
+        [[self navigationController] popToViewController:parent animated:YES];
+    } else if (touch.view.tag == 2) {
+        ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
+        parent.backgroundImage = [UIImage imageNamed:@"User2.jpeg"];
+        parent.icon = [UIImage imageNamed:@"User2icon.jpeg"];
+        [parent viewDidLoad];
+        [[self navigationController] popToViewController:parent animated:YES];
+    } else if (touch.view.tag == 3) {
+        ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
+        parent.backgroundImage = [UIImage imageNamed:@"User3.jpg"];
+        parent.icon = [UIImage imageNamed:@"User3icon.jpeg"];
+        [parent viewDidLoad];
+        [[self navigationController] popToViewController:parent animated:YES];
+    } else if (touch.view.tag == 4) {
+        ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
+        parent.backgroundImage = [UIImage imageNamed:@"User4.jpg"];
+        parent.icon = [UIImage imageNamed:@"User4icon.jpeg"];
+        [parent viewDidLoad];
+        [[self navigationController] popToViewController:parent animated:YES];
     }
-    
+
 }
 
 - (void)didReceiveMemoryWarning {

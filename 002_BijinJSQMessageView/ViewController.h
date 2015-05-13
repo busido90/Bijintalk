@@ -13,6 +13,9 @@
 
 @interface ViewController : JSQMessagesViewController
 
+@property (nonatomic, assign) UIImage *backgroundImage;
+@property (nonatomic, assign) UIImage *icon;
+
 
 @end
 

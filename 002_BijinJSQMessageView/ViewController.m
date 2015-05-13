@@ -27,8 +27,15 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     //背景画像設定
-    UIImage *backgroundImage = [UIImage imageNamed:@"User1.jpeg"];
-    super.collectionView.backgroundColor= [UIColor colorWithPatternImage:backgroundImage];
+    if (self.backgroundImage == nil) {
+        self.backgroundImage = [UIImage imageNamed:@"User2.jpeg"];
+    }
+    self.collectionView.backgroundColor= [UIColor colorWithPatternImage:_backgroundImage];
+    
+    //相手icon設定
+    if (self.icon == nil) {
+        self.icon = [UIImage imageNamed:@"User2icon.jpeg"];
+    }
     
     //上部の画面表示 結局使わず
 //    self.collectionView = UICollectionElementKindSectionHeader;
@@ -54,8 +61,8 @@
     self.incomingBubble = [bubbleFactory  incomingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleBlueColor]];
     self.outgoingBubble = [bubbleFactory  outgoingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleGreenColor]];
     // ③ アバター画像を設定
-    self.incomingAvatar = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"User2.jpeg"] diameter:64];
-    self.outgoingAvatar = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"User1.jpeg"] diameter:64];
+    self.incomingAvatar = [JSQMessagesAvatarImageFactory avatarImageWithImage:_icon diameter:64];
+    self.outgoingAvatar = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"User1icon.jpeg"] diameter:64];
     // ④ メッセージデータの配列を初期化
     self.messages = [NSMutableArray array];
     

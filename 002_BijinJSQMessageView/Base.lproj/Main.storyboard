@@ -7,7 +7,7 @@
         <!--TALK-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="TALK" id="uOx-6I-Cb7"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -69,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmk-IO-JMJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2014" y="952"/>
+            <point key="canvasLocation" x="1094" y="832"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Cay-dU-U72">
@@ -135,6 +135,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="どの子にしますか？" id="uBR-84-oyO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="User1ImageView" destination="g1x-QW-m42" id="dtP-ZO-AIY"/>
+                        <outlet property="User2ImageView" destination="zf6-DR-MIh" id="gca-j6-GON"/>
+                        <outlet property="User3ImageView" destination="nQk-MH-8hq" id="toc-Bs-L1g"/>
+                        <outlet property="User4ImageView" destination="4hY-wc-UQa" id="VpH-CV-mQJ"/>
+                        <outlet property="User5ImageView" destination="Orj-nK-9Tl" id="g4i-Tv-4s3"/>
+                        <outlet property="User6ImageView" destination="SHW-tV-2ax" id="HDI-cy-pJr"/>
+                        <outlet property="User7ImageView" destination="qcp-8k-i6N" id="sv6-Wk-8QB"/>
+                        <outlet property="User8ImageView" destination="7ak-3e-Rsb" id="ltB-K4-xem"/>
+                        <outlet property="User9ImageView" destination="YyG-wu-PtU" id="jq2-g9-gEf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y56-Vs-fIu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
