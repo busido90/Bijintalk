@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <JSQMessagesViewController/JSQMessages.h>
-#import "ConfigViewController.h"
+//#import "ConfigViewController.h"
+#import "SettingViewController.h"
 
 @interface ViewController : JSQMessagesViewController
 

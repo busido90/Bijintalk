@@ -48,9 +48,14 @@
 
 }
 
-//- (void)viewDidAppear {
-//    //UIScrollBar表示時にスクロールバーをフラッシュ表示
-//    ConfigViewController.;
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    
+//    ConfigScrollView *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+//    
+//    
+//    [[self navigationController] pushViewController:dvc animated:YES];
+//    
 //}
 
 - (void)didReceiveMemoryWarning {

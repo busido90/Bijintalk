@@ -39,7 +39,7 @@
     UIBarButtonItem *btn = [[UIBarButtonItem alloc]
                             initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize
                             target:self
-                            action:@selector(gotoConfig:)];
+                            action:@selector(gotoSetting:)];
     
 
     // なお右側に追加する時は、以下のようにする。
@@ -75,11 +75,11 @@
         
 }
 
-- (void)gotoConfig:(id)sender
+- (void)gotoSetting:(id)sender
 {
-    ConfigViewController *Config = [self.storyboard instantiateViewControllerWithIdentifier:@"Config"];//手順7で付けた名前
+    SettingViewController *Setting = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];//手順7で付けた名前
 
-    [[self navigationController] pushViewController:Config animated:YES];
+    [[self navigationController] pushViewController:Setting animated:YES];
 }
 
 
