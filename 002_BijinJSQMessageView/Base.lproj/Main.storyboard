@@ -74,7 +74,7 @@
         <!--アラーム-->
         <scene sceneID="Cay-dU-U72">
             <objects>
-                <viewController id="I3C-dr-vH4" customClass="AlarmViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlarmViewController" id="I3C-dr-vH4" customClass="AlarmViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vxv-Hp-SyC"/>
                         <viewControllerLayoutGuide type="bottom" id="iuz-80-n3q"/>
@@ -102,7 +102,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="AlarmTableView" destination="RvY-7R-uDZ" id="xNG-QC-kAu"/>
-                        <outlet property="showDatePicker" destination="TG0-Hb-LjN" id="oX1-5g-H3C"/>
+                        <outlet property="AlarmTimeDatePicker" destination="TG0-Hb-LjN" id="qe3-v2-cUX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZDR-ge-XD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
