@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AlarmViewController : UIViewController
+@interface AlarmViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+    NSMutableArray *_objects;
+    BOOL _isVisibleFlag;
+    UIActionSheet *basicSheet;
+}
+
+@property (weak, nonatomic) IBOutlet UITableView *AlarmTableView;
+@property (weak, nonatomic) IBOutlet UIDatePicker *AlarmTimeDatePicker;
+
+
 
 @end

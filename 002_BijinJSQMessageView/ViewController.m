@@ -26,11 +26,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+//    NSLog(@"%f", self.navigationController.navigationBar.bounds.size.height);
+    
     //背景画像設定
     if (self.backgroundImage == nil) {
         self.backgroundImage = [UIImage imageNamed:@"User2.jpeg"];
     }
-    self.collectionView.backgroundColor= [UIColor colorWithPatternImage:_backgroundImage];
+    //collectionViewを透明にする
+    self.collectionView.backgroundColor= [UIColor colorWithWhite:0.0 alpha:0.0];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:_backgroundImage];
+//    self.collectionView.backgroundColor= [UIColor colorWithPatternImage:_backgroundImage];
     
     //相手icon設定
     if (self.icon == nil) {
