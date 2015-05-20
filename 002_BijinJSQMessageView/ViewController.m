@@ -75,7 +75,7 @@
     
     JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
                                               displayName:@"underscore"
-                                                     text:@"Good Morning!"];
+                                                     text:@"Good Morning!!?"];
     
     [self.messages addObject:message];
     
@@ -177,8 +177,12 @@
 //    NSLog(@"%@", [reply lastObject]);
     NSString *say = [message lastObject];
     
+    //置換
+    NSString *say2 = [say stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"];
+
+    
     //エンコード
-    NSString* encodesay = [say
+    NSString* encodesay = [say2
                             stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     NSString *origin = @"http://192.168.33.20/PHP/index.php?";

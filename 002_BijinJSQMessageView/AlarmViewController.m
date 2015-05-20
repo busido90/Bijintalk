@@ -22,6 +22,8 @@
     self.AlarmTableView.dataSource = self;
     self.AlarmTableView.delegate = self;
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
                                   initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                   target:self
@@ -37,6 +39,9 @@
 //    [self setDatatime];
     
     _isVisibleFlag = NO;
+    
+    [self.view sendSubviewToBack:AlarmTableView];
+    
 }
 
 //- (void)setDatatime{
@@ -51,29 +56,37 @@
 //}
 
 - (void)createActionSheet{
-    _basicSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:nil cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil];
-    [_basicSheet setActionSheetStyle:UIActionSheetStyleBlackTranslucent];
-    [_basicSheet setFrame:CGRectMake(self.view.bounds.size.width, self.view.bounds.size.height, self.view.bounds.size.width, self.AlarmTimeDatePicker.bounds.size.height + 44)];
+    [self.basicSheet setBackgroundColor:[UIColor colorWithWhite:1 alpha:1]];
 }
 
 - (void)createAlarmTimeDatePicker{
-    
-    [self.AlarmTimeDatePicker setFrame:CGRectMake(0, 44, self.view.bounds.size.width, self.AlarmTimeDatePicker.bounds.size.height)];
-    
-    [_basicSheet addSubview:self.AlarmTimeDatePicker];
+    [self.AlarmTimeDatePicker setDatePickerMode:UIDatePickerModeTime];
 }
 
 - (void)createControlToolBar{
     
-    _controlToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, _basicSheet.bounds.size.width, 44)];
-    [_controlToolBar setBarStyle:UIBarStyleBlack];
-    [_controlToolBar sizeToFit];
+//    _controlToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, _basicSheet.bounds.size.width, 44)];
+    [self.controlToolBar setBarStyle:UIBarStyleBlack];
+    [self.controlToolBar sizeToFit];
     
     UIBarButtonItem *spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *setButton_1 = [[UIBarButtonItem alloc] initWithTitle:@"設定" style:UIBarButtonItemStyleDone target:self action:@selector(dismissSet)];
-    [_controlToolBar setItems:[NSArray arrayWithObjects:spacer, setButton_1, nil] animated:NO];
+    UIBarButtonItem *canselButton = [[UIBarButtonItem alloc] initWithTitle:@"キャンセル" style:UIBarButtonItemStyleDone target:self action:@selector(canselSet)];
+    [self.controlToolBar setItems:[NSArray arrayWithObjects:spacer, setButton_1, canselButton, nil] animated:NO];
     
-    [_basicSheet addSubview:_controlToolBar];
+//    [_basicSheet addSubview:_controlToolBar];
+    
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+ 
+    if (self.editing){
+        [self.AlarmTableView setEditing:YES animated:YES];
+    } else {
+        [self.AlarmTableView setEditing:NO animated:YES];
+    }
+    
     
 }
 
@@ -81,26 +94,26 @@
     _isVisibleFlag = YES;
     [self showPicker];
     
-    NSArray *listOfViews = [_basicSheet subviews];
-    
-    for (UIView *subView in listOfViews) {
-        
-        if ([subView isKindOfClass:[UIDatePicker class]]) {
-            
-            self.dataTime = [(UIDatePicker *) subView date];
-            
-        }
-    }
+    NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+    formatter.dateFormat = @"HH:mm";
+    self.dataTime = [formatter stringFromDate:AlarmTimeDatePicker.date];
     
     [self insertNewObject];
 }
 
+-(void) canselSet{
+    _isVisibleFlag = YES;
+    [self showPicker];
+}
+
 -(void) showPicker {
+    
+//    [self.view addSubview:self.basicSheet];
     
     if (_isVisibleFlag) {
         [UIView beginAnimations:nil context:nil];
         [UIView setAnimationDuration:0.3];
-        _basicSheet.frame = CGRectMake(0, self.view.bounds.size.height, self.AlarmTimeDatePicker.bounds.size.width, self.AlarmTimeDatePicker.bounds.size.height);
+        self.basicSheet.frame = CGRectMake(0, self.view.bounds.size.height, self.AlarmTimeDatePicker.bounds.size.width, self.AlarmTimeDatePicker.bounds.size.height + 44);
         
         [UIView commitAnimations];
         
@@ -112,10 +125,10 @@
         //アニメーションの動く時間を決めている キーボードの再生時間は0.3
         [UIView setAnimationDuration:0.3];
         //変わった後の場所を指定 キーボードの高さは250?
-        _basicSheet.frame = CGRectMake(0, self.view.bounds.size.height- self.AlarmTimeDatePicker.bounds.size.height, self.AlarmTimeDatePicker.bounds.size.width, self.AlarmTimeDatePicker.bounds.size.height);
+        self.basicSheet.frame = CGRectMake(0, self.view.bounds.size.height - self.AlarmTimeDatePicker.bounds.size.height - 44, self.AlarmTimeDatePicker.bounds.size.width, self.AlarmTimeDatePicker.bounds.size.height + 44);
         //実際に動かしている
         [UIView commitAnimations];
-        
+//        NSLog(@"%d", 1);
         //フラグをYESにする
         _isVisibleFlag = YES;
     }
@@ -131,6 +144,7 @@
     [_objects insertObject:self.dataTime atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.AlarmTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//    [self.AlarmTableView reloadData];
 }
 
 
@@ -148,7 +162,32 @@
     NSDate *object = _objects[indexPath.row];
     
     cell.textLabel.text = [object description];
+    cell.textLabel.font = [UIFont systemFontOfSize:40];
     return cell;
+}
+
+//- (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return YES;
+//}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [_objects removeObjectAtIndex:indexPath.row];
+//        NSLog(@"%@", indexPath);
+        [self.AlarmTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        
+    }
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
 }
 
 - (void)didReceiveMemoryWarning {
