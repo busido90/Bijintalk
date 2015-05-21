@@ -86,15 +86,6 @@
 
 }
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
-        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
-    }
-    // Override point for customization after application launch.
-    return YES;
-}
-
 - (void)gotoSetting:(id)sender
 {
     SettingViewController *Setting = [self.storyboard instantiateViewControllerWithIdentifier:@"SettingViewController"];//手順7で付けた名前
