@@ -14,11 +14,14 @@
 
 @implementation AlarmViewController
 
-@synthesize AlarmTimeDatePicker, AlarmTableView, dataTime;
+//@synthesize AlarmTimeDatePicker, AlarmTableView, dataTime;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    
     self.AlarmTableView.dataSource = self;
     self.AlarmTableView.delegate = self;
     
@@ -40,9 +43,49 @@
     
     _isVisibleFlag = NO;
     
-    [self.view sendSubviewToBack:AlarmTableView];
+    //背面に
+    [self.view sendSubviewToBack:self.AlarmTableView];
+    
+    //UserDefaultsから取り出し
+    _UserDefaults = [NSUserDefaults standardUserDefaults];
+    NSData *data = [_UserDefaults objectForKey:@"datatime"];
+    _objects = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     
 }
+
+- (void)setAlarm {
+
+    // アプリに登録されている全ての通知を削除
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    
+    for (NSString *str in _objects) {
+    //文字変換
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"HH:mm"];
+    //タイムゾーンの指定 
+    [formatter setTimeZone:[NSTimeZone systemTimeZone]];
+    
+    NSDate *date = [formatter dateFromString:str];
+    
+    // インスタンス生成
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    // 通知をする（設定は秒単位）
+    notification.fireDate = date;
+    // タイムゾーンの設定
+    notification.timeZone = [NSTimeZone defaultTimeZone];
+    // 通知時に表示させるメッセージ内容
+    notification.alertBody = @"メッセージが届いています";
+    // 通知に鳴る音の設定
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    
+    // 通知の登録
+    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    
+    // NSLog
+    NSLog(@"%d", 1);
+    }
+}
+
 
 //- (void)setDatatime{
 //    NSDateFormatter *inputDateFormatter = [[NSDateFormatter alloc] init];
@@ -96,7 +139,9 @@
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     formatter.dateFormat = @"HH:mm";
-    self.dataTime = [formatter stringFromDate:AlarmTimeDatePicker.date];
+    self.dataTimeString = [formatter stringFromDate:self.AlarmTimeDatePicker.date];
+//    NSLog(@"%@", self.AlarmTimeDatePicker.date);
+    self.dateTime = self.AlarmTimeDatePicker.date;
     
     [self insertNewObject];
 }
@@ -141,10 +186,46 @@
         _objects = [[NSMutableArray alloc] init];
     }
     
-    [_objects insertObject:self.dataTime atIndex:0];
+    //_objectsに保存
+    [_objects insertObject:self.dataTimeString atIndex:0];
+//    NSLog(@"%@", _objects);
+    
+    //UserDefaultsに保存
+    NSData *objectData = [NSKeyedArchiver archivedDataWithRootObject:_objects];
+//    NSLog(@"%@", objectData);
+    [_UserDefaults setObject:objectData forKey:@"datatime"];
+//    NSLog(@"%@", [_UserDefaults objectForKey:@"datatime"]);
+    
+    //リロード・アニメーション
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.AlarmTableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 //    [self.AlarmTableView reloadData];
+    
+    
+    //通知の設定
+    [self setAlarm];
+//
+//    //文字変換
+//    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+//    [formatter setDateFormat:@"HH:mm"];
+//    //タイムゾーンの指定
+//    [formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
+//    
+//    NSDate *date = [formatter dateFromString:self.dataTimeString];
+//    
+//    // インスタンス生成
+//    UILocalNotification *notification = [[UILocalNotification alloc] init];
+//    // 通知をする（設定は秒単位）
+//    notification.fireDate = date;
+//    // タイムゾーンの設定
+//    notification.timeZone = [NSTimeZone defaultTimeZone];
+//    // 通知時に表示させるメッセージ内容
+//    notification.alertBody = @"メッセージが届いています";
+//    // 通知に鳴る音の設定
+//    notification.soundName = UILocalNotificationDefaultSoundName;
+//    
+//    // 通知の登録
+//    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
 

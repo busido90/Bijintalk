@@ -11,13 +11,16 @@
 @interface AlarmViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     NSMutableArray *_objects;
     BOOL _isVisibleFlag;
+    NSUserDefaults *_UserDefaults;
+
 }
 
 @property (weak, nonatomic) IBOutlet UITableView *AlarmTableView;
 @property (weak, nonatomic) IBOutlet UIView *basicSheet;
 @property (weak, nonatomic) IBOutlet UIToolbar *controlToolBar;
 @property (weak, nonatomic) IBOutlet UIDatePicker *AlarmTimeDatePicker;
-@property (strong, nonatomic) NSString *dataTime;
+@property (strong, nonatomic) NSString *dataTimeString;
+@property (strong, nonatomic) NSDate *dateTime;
 
 -(void) showPicker;
 
