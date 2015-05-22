@@ -74,6 +74,36 @@
         parent.icon = [UIImage imageNamed:@"User4icon.jpeg"];
         [parent viewDidLoad];
         [[self navigationController] popToViewController:parent animated:YES];
+    } else if (touch.view.tag == 5) {
+        ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
+        parent.backgroundImage = [UIImage imageNamed:@"User5.jpg"];
+        parent.icon = [UIImage imageNamed:@"User5icon.jpeg"];
+        [parent viewDidLoad];
+        [[self navigationController] popToViewController:parent animated:YES];
+    } else if (touch.view.tag == 6) {
+        ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
+        parent.backgroundImage = [UIImage imageNamed:@"User6.jpg"];
+        parent.icon = [UIImage imageNamed:@"User6icon.jpeg"];
+        [parent viewDidLoad];
+        [[self navigationController] popToViewController:parent animated:YES];
+    } else if (touch.view.tag == 7) {
+        ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
+        parent.backgroundImage = [UIImage imageNamed:@"User7.jpg"];
+        parent.icon = [UIImage imageNamed:@"User7icon.jpeg"];
+        [parent viewDidLoad];
+        [[self navigationController] popToViewController:parent animated:YES];
+    } else if (touch.view.tag == 8) {
+        ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
+        parent.backgroundImage = [UIImage imageNamed:@"User8.jpg"];
+        parent.icon = [UIImage imageNamed:@"User8icon.jpeg"];
+        [parent viewDidLoad];
+        [[self navigationController] popToViewController:parent animated:YES];
+    } else if (touch.view.tag == 9) {
+        ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
+        parent.backgroundImage = [UIImage imageNamed:@"User9.jpg"];
+        parent.icon = [UIImage imageNamed:@"User9icon.jpeg"];
+        [parent viewDidLoad];
+        [[self navigationController] popToViewController:parent animated:YES];
     }
 
 }

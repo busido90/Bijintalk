@@ -75,7 +75,7 @@
     
     JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
                                               displayName:@"underscore"
-                                                     text:@"Good Morning!!?"];
+                                                     text:@"How are you?"];
     
     [self.messages addObject:message];
     
@@ -159,7 +159,7 @@
 - (void)receiveMessage
 {
     // 1秒後にメッセージを受信する
-    [NSTimer scheduledTimerWithTimeInterval:1
+    [NSTimer scheduledTimerWithTimeInterval:2
                                      target:self
                                    selector:@selector(didFinishMessageTimer:)
                                    userInfo:nil
