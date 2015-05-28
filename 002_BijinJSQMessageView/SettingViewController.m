@@ -86,8 +86,8 @@
         [[self navigationController] pushViewController:dvc animated:YES];
     } else if (indexPath.section == 0 && indexPath.row == 1) {
     } else if (indexPath.section == 1 && indexPath.row == 0) {
-        DefaultViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"AlarmViewController"];
-        [[self navigationController] pushViewController:dvc animated:YES];
+//        DefaultViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"AlarmViewController"];
+//        [[self navigationController] pushViewController:dvc animated:YES];
     } else {
         
     }

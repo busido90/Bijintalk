@@ -10,6 +10,7 @@
 #import <JSQMessagesViewController/JSQMessages.h>
 //#import "ConfigViewController.h"
 #import "SettingViewController.h"
+#import "Dialogue.h"
 
 @interface ViewController : JSQMessagesViewController
 

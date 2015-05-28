@@ -184,7 +184,7 @@
     NSString* encodesay = [say2
                             stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    NSString *origin = @"http://192.168.33.20/PHP/index.php?";
+    NSString *origin = @"http://geechscamp.lovepop.jp/bijintalk/index.php?";
     NSString *url = [NSString stringWithFormat:@"%@mention=%@",origin,encodesay];
                      
 
