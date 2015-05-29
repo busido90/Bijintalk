@@ -11,8 +11,18 @@
 //#import "ConfigViewController.h"
 #import "SettingViewController.h"
 #import "Dialogue.h"
+#import "AuthApiKey.h"
+#import "DialogueError.h"
+#import "DialogueRequestParam.h"
+#import "DialogueResultData.h"
+#import "SdkError.h"
 
-@interface ViewController : JSQMessagesViewController
+@interface ViewController : JSQMessagesViewController{
+    DialogueRequestParam * param;
+    Dialogue * dialogue;
+    DialogueResultData * resultData;
+    DialogueError * requestError;
+}
 
 @property (nonatomic, assign) UIImage *backgroundImage;
 @property (nonatomic, assign) UIImage *icon;

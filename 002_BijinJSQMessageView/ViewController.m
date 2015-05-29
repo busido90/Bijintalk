@@ -75,13 +75,18 @@
     
     JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
                                               displayName:@"underscore"
-                                                     text:@"How are you?"];
+                                                     text:@"お元気ですか？"];
     
     [self.messages addObject:message];
     
 //    NSMutableArray *a = self.messages;
 //    
 //    NSLog(@"%@", a);
+    
+    //ドコモの初期化処理
+    [AuthApiKey initializeAuth: @"356a7231614374324d6f6f482e79674c546e2e374d46502f4633676d3279724765582e6d4e6f767a4b2e43"];
+    param = [[DialogueRequestParam alloc] init];
+    dialogue = [[Dialogue alloc] init];
 
 
 }
@@ -158,7 +163,7 @@
 // ⑥ 返信メッセージを受信する (自動)
 - (void)receiveMessage
 {
-    // 1秒後にメッセージを受信する
+    // 2秒後にメッセージを受信する
     [NSTimer scheduledTimerWithTimeInterval:2
                                      target:self
                                    selector:@selector(didFinishMessageTimer:)
@@ -176,37 +181,73 @@
 //    NSLog(@"%@", [reply lastObject]);
     NSString *say = [message lastObject];
     
-    //置換
-    NSString *say2 = [say stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"];
-
     
-    //エンコード
-    NSString* encodesay = [say2
-                            stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    //ドコモのAPIに送る
+    // ユーザーの発話を設定する
+    param.utt = say;
+    //雑談対話要求処理クラスにリクエストデータを渡し、受信完了時処理を登録する
+    DialogueError * sendError = [dialogue request: param
+                                       onComplete: ^( DialogueResultData *resultData)
+    {
+        //メソッドに送らずこの中でやる
+//        // 受信完了時処理へ
+//        [self receiveDialogueRequest:resultData];
+    } onError:^( SdkError *receiveError) {
+        NSLog(@"受信エラーコード=%ld",(long) receiveError.code);
+        NSLog(@"受信エラー情報=%@", receiveError.localizedDescription);
+    }];
+    if (sendError) {
+        NSLog(@"送信エラーコード=%ld",(long) sendError.code);
+        NSLog(@"送信エラー情報=%@", sendError.localizedDescription);
+    }
     
-    NSString *origin = @"http://geechscamp.lovepop.jp/bijintalk/index.php?";
-    NSString *url = [NSString stringWithFormat:@"%@mention=%@",origin,encodesay];
-                     
-
-    // Requestを作成
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
-    // サーバーとの通信を行う
-    NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    //受信完了処理
+//    NSLog(@"回答=%@", resultData.utt);
+    // 対話を継続するために context にはサーバから受信した文字列を設定する。
+    param.context = resultData.context;
+    // サーバー発のしりとりモードを継続するため受信したモードを設定する
+    param.mode = resultData.mode;
+    // 任意の文字列を会話に設定する
+//    param.utt = @"しりとりしましょう。";
+    // ボタンを押したらリクエストを送信する処理へ
     
-    // JSONをパース
-    NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
     
-    //デコード
-    NSString* reply = [[array valueForKeyPath:@"reply"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    NSLog(@"%@",reply);
-    
+//    自分のデータベースとの通信処理(停止中)
+//    //シングルクォーテーション置換
+//    NSString *say2 = [say stringByReplacingOccurrencesOfString:@"'" withString:@"\\'"];
+//
+//    
+//    //エンコード
+//    NSString* encodesay = [say2
+//                            stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    
+//    NSString *origin = @"http://geechscamp.lovepop.jp/bijintalk/index.php?";
+//    NSString *url = [NSString stringWithFormat:@"%@mention=%@",origin,encodesay];
+//                     
+//
+//    // Requestを作成
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
+//    // サーバーとの通信を行う
+//    NSData *json = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+//    
+//    // JSONをパース
+//    NSArray *array = [NSJSONSerialization JSONObjectWithData:json options:NSJSONReadingAllowFragments error:nil];
+//    
+//    //デコード
+//    NSString* reply = [[array valueForKeyPath:@"reply"] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//    
+//    NSLog(@"%@",reply);
+//    
     JSQMessage *reply2 = [JSQMessage messageWithSenderId:@"user2"
                                               displayName:@"underscore"
-                                                     text:[array valueForKeyPath:@"reply"]];
+                                                    text:resultData.utt];
+//                                                     text:[array valueForKeyPath:@"reply"]];
     [self.messages addObject:reply2];
     
     
+    
+    //自動に応答しない感じ
 //    if ([say isEqual: @"fine"]) {
 //        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
 //                                                  displayName:@"underscore"
