@@ -33,7 +33,7 @@
     if (self.backgroudImageView.image == nil) {
         self.backgroudImageView.frame = CGRectMake(0, self.navigationController.navigationBar.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
         self.backgroudImageView.image = [UIImage imageNamed:@"Model1_default.jpg"];
-//        self.backgroundImage = [UIImage imageNamed:@"Model1_default.jpg"];
+        self.backgroundImage = [UIImage imageNamed:@"Model1_default.jpg"];
 
     }
     
@@ -44,7 +44,6 @@
     self.collectionView.backgroundColor= [UIColor colorWithWhite:0.0 alpha:0.0];
 //    self.view.backgroundColor = [UIColor colorWithPatternImage:self.backgroundImage];
 //    self.collectionView.backgroundColor= [UIColor colorWithPatternImage:_backgroundImage];
-    
     
     
     
@@ -63,14 +62,13 @@
                             initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize
                             target:self
                             action:@selector(gotoSetting:)];
-    
 
     // なお右側に追加する時は、以下のようにする。
      self.navigationItem.rightBarButtonItem = btn;
 
     
     // ① 自分の senderId, senderDisplayName を設定
-    self.senderId = @"user1";
+    self.senderId = @"User";
     self.senderDisplayName = @"classmethod";
     // ② MessageBubble (背景の吹き出し) を設定
     JSQMessagesBubbleImageFactory *bubbleFactory = [JSQMessagesBubbleImageFactory new];
@@ -78,22 +76,21 @@
     self.outgoingBubble = [bubbleFactory  outgoingMessagesBubbleImageWithColor:[UIColor jsq_messageBubbleGreenColor]];
     // ③ アバター画像を設定
     self.incomingAvatar = [JSQMessagesAvatarImageFactory avatarImageWithImage:_icon diameter:64];
-    self.outgoingAvatar = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"User1icon.jpeg"] diameter:64];
+    self.outgoingAvatar = [JSQMessagesAvatarImageFactory avatarImageWithImage:[UIImage imageNamed:@"default.png"] diameter:64];
     // ④ メッセージデータの配列を初期化
     self.messages = [NSMutableArray array];
     
     self.inputToolbar.contentView.leftBarButtonItem = nil;
     
-    JSQMessage *message = [JSQMessage messageWithSenderId:@"Model"
-                                              displayName:@"underscore"
-                                                     text:@"お元気ですか？"];
-
-    
-    [self.messages addObject:message];
     
 //    [self finishReceivingMessageAnimated:YES];
 
-
+    JSQMessage *message = [JSQMessage messageWithSenderId:@"Model"
+                                              displayName:@"underscore"
+                                                     text:@"お元気ですか？"];
+    [self.messages addObject:message];
+    
+    [self viewDidAppear:YES];
     
 
 //    [self.view addSubview:self.collectionView];
@@ -108,7 +105,7 @@
     param = [[DialogueRequestParam alloc] init];
     dialogue = [[Dialogue alloc] init];
 
-
+    
 }
 
 - (void)gotoSetting:(id)sender

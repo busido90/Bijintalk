@@ -52,56 +52,56 @@
     UITouch *touch = [touches anyObject];
     if (touch.view.tag == 1) {
         ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
-        parent.backgroundImage = [UIImage imageNamed:@"User1.jpeg"];
-        parent.icon = [UIImage imageNamed:@"User1icon.jpeg"];
+        parent.backgroudImageView.image = [UIImage imageNamed:@"Model1_default.jpg"];
+        parent.icon = [UIImage imageNamed:@"Model1_icon.jpeg"];
         [parent viewDidLoad];
         [[self navigationController] popToViewController:parent animated:YES];
     } else if (touch.view.tag == 2) {
         ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
-        parent.backgroundImage = [UIImage imageNamed:@"User2.jpeg"];
-        parent.icon = [UIImage imageNamed:@"User2icon.jpeg"];
+        parent.backgroudImageView.image = [UIImage imageNamed:@"Model2_default.jpg"];
+        parent.icon = [UIImage imageNamed:@"Model2_icon.jpeg"];
         [parent viewDidLoad];
         [[self navigationController] popToViewController:parent animated:YES];
     } else if (touch.view.tag == 3) {
         ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
-        parent.backgroundImage = [UIImage imageNamed:@"User3.jpg"];
-        parent.icon = [UIImage imageNamed:@"User3icon.jpeg"];
+        parent.backgroudImageView.image = [UIImage imageNamed:@"Model3_default.jpg"];
+        parent.icon = [UIImage imageNamed:@"Model3_icon.jpeg"];
         [parent viewDidLoad];
         [[self navigationController] popToViewController:parent animated:YES];
     } else if (touch.view.tag == 4) {
         ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
-        parent.backgroundImage = [UIImage imageNamed:@"User4.jpg"];
-        parent.icon = [UIImage imageNamed:@"User4icon.jpeg"];
+        parent.backgroudImageView.image = [UIImage imageNamed:@"Model4_default.jpg"];
+        parent.icon = [UIImage imageNamed:@"Model4_icon.jpeg"];
         [parent viewDidLoad];
         [[self navigationController] popToViewController:parent animated:YES];
     } else if (touch.view.tag == 5) {
         ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
-        parent.backgroundImage = [UIImage imageNamed:@"User5.jpg"];
-        parent.icon = [UIImage imageNamed:@"User5icon.jpeg"];
+        parent.backgroudImageView.image = [UIImage imageNamed:@"Model5_default.jpg"];
+        parent.icon = [UIImage imageNamed:@"Model5_icon.jpeg"];
         [parent viewDidLoad];
         [[self navigationController] popToViewController:parent animated:YES];
     } else if (touch.view.tag == 6) {
         ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
-        parent.backgroundImage = [UIImage imageNamed:@"User6.jpg"];
-        parent.icon = [UIImage imageNamed:@"User6icon.jpeg"];
+        parent.backgroudImageView.image = [UIImage imageNamed:@"Model6_default.jpg"];
+        parent.icon = [UIImage imageNamed:@"Model6_icon.jpeg"];
         [parent viewDidLoad];
         [[self navigationController] popToViewController:parent animated:YES];
     } else if (touch.view.tag == 7) {
         ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
-        parent.backgroundImage = [UIImage imageNamed:@"User7.jpg"];
-        parent.icon = [UIImage imageNamed:@"User7icon.jpeg"];
+        parent.backgroudImageView.image = [UIImage imageNamed:@"Model7_default.jpg"];
+        parent.icon = [UIImage imageNamed:@"Model7_icon.jpeg"];
         [parent viewDidLoad];
         [[self navigationController] popToViewController:parent animated:YES];
     } else if (touch.view.tag == 8) {
         ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
-        parent.backgroundImage = [UIImage imageNamed:@"User8.jpg"];
-        parent.icon = [UIImage imageNamed:@"User8icon.jpeg"];
+        parent.backgroudImageView.image = [UIImage imageNamed:@"Model8_default.jpg"];
+        parent.icon = [UIImage imageNamed:@"Model8_icon.jpeg"];
         [parent viewDidLoad];
         [[self navigationController] popToViewController:parent animated:YES];
     } else if (touch.view.tag == 9) {
         ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
-        parent.backgroundImage = [UIImage imageNamed:@"User9.jpg"];
-        parent.icon = [UIImage imageNamed:@"User9icon.jpeg"];
+        parent.backgroudImageView.image = [UIImage imageNamed:@"Model9_default.jpg"];
+        parent.icon = [UIImage imageNamed:@"Model9_icon.jpeg"];
         [parent viewDidLoad];
         [[self navigationController] popToViewController:parent animated:YES];
     }

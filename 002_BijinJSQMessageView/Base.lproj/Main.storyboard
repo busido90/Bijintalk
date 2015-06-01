@@ -151,28 +151,28 @@
                             <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Model1_icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="g1x-QW-m42">
                                 <rect key="frame" x="6" y="94" width="90" height="90"/>
                             </imageView>
-                            <imageView tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User2icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="zf6-DR-MIh">
+                            <imageView tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Model2_icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="zf6-DR-MIh">
                                 <rect key="frame" x="115" y="94" width="90" height="90"/>
                             </imageView>
-                            <imageView tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User3icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="nQk-MH-8hq">
+                            <imageView tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Model3_icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="nQk-MH-8hq">
                                 <rect key="frame" x="224" y="94" width="90" height="90"/>
                             </imageView>
-                            <imageView tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User4icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="4hY-wc-UQa">
+                            <imageView tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Model4_icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="4hY-wc-UQa">
                                 <rect key="frame" x="7" y="249" width="90" height="90"/>
                             </imageView>
-                            <imageView tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User5icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Orj-nK-9Tl">
+                            <imageView tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Model5_icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Orj-nK-9Tl">
                                 <rect key="frame" x="116" y="249" width="90" height="90"/>
                             </imageView>
-                            <imageView tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User6icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="SHW-tV-2ax">
+                            <imageView tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Model6_icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="SHW-tV-2ax">
                                 <rect key="frame" x="225" y="249" width="90" height="90"/>
                             </imageView>
-                            <imageView tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User7icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="qcp-8k-i6N">
+                            <imageView tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Model7_icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="qcp-8k-i6N">
                                 <rect key="frame" x="7" y="394" width="90" height="90"/>
                             </imageView>
-                            <imageView tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User8icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="7ak-3e-Rsb">
+                            <imageView tag="8" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Model8_icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="7ak-3e-Rsb">
                                 <rect key="frame" x="116" y="394" width="90" height="90"/>
                             </imageView>
-                            <imageView tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User9icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="YyG-wu-PtU">
+                            <imageView tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Model9_icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="YyG-wu-PtU">
                                 <rect key="frame" x="225" y="394" width="90" height="90"/>
                             </imageView>
                         </subviews>
@@ -245,13 +245,13 @@
     </scenes>
     <resources>
         <image name="Model1_icon.jpeg" width="498" height="498"/>
-        <image name="User2icon.jpeg" width="320" height="320"/>
-        <image name="User3icon.jpeg" width="320" height="320"/>
-        <image name="User4icon.jpeg" width="196" height="196"/>
-        <image name="User5icon.jpeg" width="291" height="291"/>
-        <image name="User6icon.jpeg" width="292" height="292"/>
-        <image name="User7icon.jpeg" width="319" height="319"/>
-        <image name="User8icon.jpeg" width="318" height="318"/>
-        <image name="User9icon.jpeg" width="316" height="317"/>
+        <image name="Model2_icon.jpeg" width="620" height="620"/>
+        <image name="Model3_icon.jpeg" width="454" height="454"/>
+        <image name="Model4_icon.jpeg" width="403" height="403"/>
+        <image name="Model5_icon.jpeg" width="187" height="187"/>
+        <image name="Model6_icon.jpeg" width="537" height="537"/>
+        <image name="Model7_icon.jpeg" width="417" height="417"/>
+        <image name="Model8_icon.jpeg" width="521" height="521"/>
+        <image name="Model9_icon.jpeg" width="529" height="529"/>
     </resources>
 </document>
