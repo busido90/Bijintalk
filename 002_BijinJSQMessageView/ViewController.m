@@ -18,6 +18,7 @@
 
 @end
 
+
 @implementation ViewController
 
 #pragma mark - UIViewController
@@ -29,17 +30,27 @@
 //    NSLog(@"%f", self.navigationController.navigationBar.bounds.size.height);
     
     //背景画像設定
-    if (self.backgroundImage == nil) {
-        self.backgroundImage = [UIImage imageNamed:@"User2.jpeg"];
+    if (self.backgroudImageView.image == nil) {
+        self.backgroudImageView.frame = CGRectMake(0, self.navigationController.navigationBar.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
+        self.backgroudImageView.image = [UIImage imageNamed:@"Model1_default.jpg"];
+//        self.backgroundImage = [UIImage imageNamed:@"Model1_default.jpg"];
+
     }
+    
+    [self.view addSubview:self.backgroudImageView];
+    [self.view sendSubviewToBack:self.backgroudImageView];
+    
     //collectionViewを透明にする
     self.collectionView.backgroundColor= [UIColor colorWithWhite:0.0 alpha:0.0];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:_backgroundImage];
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:self.backgroundImage];
 //    self.collectionView.backgroundColor= [UIColor colorWithPatternImage:_backgroundImage];
+    
+    
+    
     
     //相手icon設定
     if (self.icon == nil) {
-        self.icon = [UIImage imageNamed:@"User2icon.jpeg"];
+        self.icon = [UIImage imageNamed:@"Model1_icon.jpeg"];
     }
     
     //上部の画面表示 結局使わず
@@ -73,11 +84,20 @@
     
     self.inputToolbar.contentView.leftBarButtonItem = nil;
     
-    JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
+    JSQMessage *message = [JSQMessage messageWithSenderId:@"Model"
                                               displayName:@"underscore"
                                                      text:@"お元気ですか？"];
+
     
     [self.messages addObject:message];
+    
+//    [self finishReceivingMessageAnimated:YES];
+
+
+    
+
+//    [self.view addSubview:self.collectionView];
+//    [self.view bringSubviewToFront:self.collectionView];
     
 //    NSMutableArray *a = self.messages;
 //    
@@ -187,11 +207,13 @@
     param.utt = say;
     //雑談対話要求処理クラスにリクエストデータを渡し、受信完了時処理を登録する
     DialogueError * sendError = [dialogue request: param
-                                       onComplete: ^( DialogueResultData *resultData)
+                                       onComplete: ^( DialogueResultData *resultData1)
     {
         //メソッドに送らずこの中でやる
 //        // 受信完了時処理へ
-//        [self receiveDialogueRequest:resultData];
+        [self receiveDialogueRequest:resultData1];
+//        param.context = resultData1.context;
+
     } onError:^( SdkError *receiveError) {
         NSLog(@"受信エラーコード=%ld",(long) receiveError.code);
         NSLog(@"受信エラー情報=%@", receiveError.localizedDescription);
@@ -204,9 +226,9 @@
     //受信完了処理
 //    NSLog(@"回答=%@", resultData.utt);
     // 対話を継続するために context にはサーバから受信した文字列を設定する。
-    param.context = resultData.context;
+//    param.context = resultData.context;
     // サーバー発のしりとりモードを継続するため受信したモードを設定する
-    param.mode = resultData.mode;
+//    param.mode = resultData.mode;
     // 任意の文字列を会話に設定する
 //    param.utt = @"しりとりしましょう。";
     // ボタンを押したらリクエストを送信する処理へ
@@ -239,11 +261,11 @@
 //    
 //    NSLog(@"%@",reply);
 //    
-    JSQMessage *reply2 = [JSQMessage messageWithSenderId:@"user2"
-                                              displayName:@"underscore"
-                                                    text:resultData.utt];
+//    JSQMessage *reply2 = [JSQMessage messageWithSenderId:@"user2"
+//                                              displayName:@"underscore"
+//                                                    text:resultData.utt];
 //                                                     text:[array valueForKeyPath:@"reply"]];
-    [self.messages addObject:reply2];
+//    [self.messages addObject:reply2];
     
     
     
@@ -278,6 +300,15 @@
 
     
     // メッセージの受信処理を完了する (画面上にメッセージが表示される)
+//    [self finishReceivingMessageAnimated:YES];
+}
+
+- (void) receiveDialogueRequest:(DialogueResultData *) resultData2 {
+    JSQMessage *reply2 = [JSQMessage messageWithSenderId:@"Model"
+                                             displayName:@"underscore"
+                                                    text:resultData2.utt];
+    [self.messages addObject:reply2];
+    
     [self finishReceivingMessageAnimated:YES];
 }
 

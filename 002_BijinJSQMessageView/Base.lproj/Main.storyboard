@@ -8,13 +8,16 @@
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="eIy-9H-40t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                     <navigationItem key="navigationItem" title="TALK" id="uOx-6I-Cb7"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="backgroudImageView" destination="eIy-9H-40t" id="BUD-bt-K7W"/>
                         <segue destination="7yN-TT-VV8" kind="push" id="0hH-BT-MvZ"/>
                         <segue destination="I3C-dr-vH4" kind="push" id="a7w-B0-rpb"/>
-                        <segue destination="JeH-TU-Yew" kind="push" id="sue-gI-rxO"/>
-                        <segue destination="7kE-Bf-oUm" kind="push" id="dPu-96-qFf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -145,7 +148,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User1icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="g1x-QW-m42">
+                            <imageView tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Model1_icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="g1x-QW-m42">
                                 <rect key="frame" x="6" y="94" width="90" height="90"/>
                             </imageView>
                             <imageView tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="User2icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="zf6-DR-MIh">
@@ -241,7 +244,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="User1icon.jpeg" width="214" height="214"/>
+        <image name="Model1_icon.jpeg" width="498" height="498"/>
         <image name="User2icon.jpeg" width="320" height="320"/>
         <image name="User3icon.jpeg" width="320" height="320"/>
         <image name="User4icon.jpeg" width="196" height="196"/>
