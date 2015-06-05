@@ -18,19 +18,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    float osVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
-    
-    if (osVersion >= 8.0f) {
-        UIUserNotificationType types =  UIUserNotificationTypeBadge|
-        UIUserNotificationTypeSound|
-        UIUserNotificationTypeAlert;
-        
-        UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
-        
-        [application registerUserNotificationSettings:mySettings];
-        
-        
-    }
+//    float osVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+//    
+//    if (osVersion >= 8.0f) {
+//        UIUserNotificationType types =  UIUserNotificationTypeBadge|
+//        UIUserNotificationTypeSound|
+//        UIUserNotificationTypeAlert;
+//        
+//        UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+//        
+//        [application registerUserNotificationSettings:mySettings];
+//        
+//        
+//    }
     
     return YES;
 }

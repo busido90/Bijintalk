@@ -8,14 +8,9 @@
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController storyboardIdentifier="ViewController" id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
-                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="eIy-9H-40t">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </imageView>
                     <navigationItem key="navigationItem" title="TALK" id="uOx-6I-Cb7"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="backgroudImageView" destination="eIy-9H-40t" id="BUD-bt-K7W"/>
                         <segue destination="7yN-TT-VV8" kind="push" id="0hH-BT-MvZ"/>
                         <segue destination="I3C-dr-vH4" kind="push" id="a7w-B0-rpb"/>
                     </connections>

@@ -20,14 +20,17 @@
     self.SettingTableView.dataSource = self;
     self.SettingTableView.delegate = self;
     
-    NSDictionary *cell0 = @{@"title":@"デフォルト"};
-    NSDictionary *cell1 = @{@"title":@"カスタム"};
-    NSDictionary *cell2 = @{@"title":@"連絡を定期的的にもらう"};
+    NSDictionary *cell0 = @{@"title":@"会話相手を変える"};
+//    NSDictionary *cell1 = @{@"title":@"カスタム"};
+//    NSDictionary *cell2 = @{@"title":@"連絡を定期的的にもらう"};
     
-    NSDictionary *section1 = @{@"header":@"会話相手変更", @"data":@[cell0, cell1]};
-    NSDictionary *section2 = @{@"header":@"コール", @"data":@[cell2]};
+    NSDictionary *section1 = @{@"header":@"会話相手変更", @"data":@[cell0]};
+//    NSDictionary *section1 = @{@"header":@"会話相手変更", @"data":@[cell0, cell1]};
+//    NSDictionary *section2 = @{@"header":@"コール", @"data":@[cell2]};
     
-    tableDataList = @[section1, section2];
+//    tableDataList = @[section1, section2];
+    tableDataList = @[section1];
+
     
 }
 
@@ -84,6 +87,7 @@
     if (indexPath.section == 0 && indexPath.row == 0) {
         DefaultViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DefaultViewController"];
         [[self navigationController] pushViewController:dvc animated:YES];
+
     } else if (indexPath.section == 0 && indexPath.row == 1) {
     } else if (indexPath.section == 1 && indexPath.row == 0) {
 //        DefaultViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"AlarmViewController"];

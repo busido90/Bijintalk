@@ -31,19 +31,37 @@
     
     //背景画像設定
     if (self.backgroudImageView.image == nil) {
-        self.backgroudImageView.frame = CGRectMake(0, self.navigationController.navigationBar.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
-        self.backgroudImageView.image = [UIImage imageNamed:@"Model1_default.jpg"];
-        self.backgroundImage = [UIImage imageNamed:@"Model1_default.jpg"];
+        UIImage *image = [UIImage imageNamed:@"Model1_default.jpg"];
+        self.backgroudImageView = [[UIImageView alloc] initWithImage:image];
+//        self.backgroudImageView.frame = [[UIView alloc] init];
+        self.backgroudImageView.frame = CGRectMake(0, self.navigationController.navigationBar.bounds.size.height +20, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
+//        NSLog(@"%f", self.navigationController.navigationBar.bounds.size.height);
+//        NSLog(@"%f", self.view.bounds.size.width);
+//        NSLog(@"%f", self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
+//        [self.navigationController.navigationBar.topItem setTitleView:imageView];
+        
+        
+//        self.backgroudImageView.image = [UIImage imageNamed:@"Model1_default.jpg"];
+//        self.backgroundImage = [UIImage imageNamed:@"Model1_default.jpg"];
+
+//        ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
+//        parent.backgroudImageView.image = [UIImage imageNamed:@"Model1_default.jpg"];
+//        parent.icon =z [UIImage imageNamed:@"Model1_icon.jpeg"];
+//        [parent viewDidLoad];
+//        [[self navigationController] animated:YES];
+
+//        self.collectionView.frame = CGRectMake(0, self.navigationController.navigationBar.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
 
     }
     
     [self.view addSubview:self.backgroudImageView];
+//    [self.backgroudImageView addSubview:self.collectionView];
     [self.view sendSubviewToBack:self.backgroudImageView];
     
     //collectionViewを透明にする
     self.collectionView.backgroundColor= [UIColor colorWithWhite:0.0 alpha:0.0];
 //    self.view.backgroundColor = [UIColor colorWithPatternImage:self.backgroundImage];
-//    self.collectionView.backgroundColor= [UIColor colorWithPatternImage:_backgroundImage];
+//    self.collectionView.backgroundColor= [UIColor colorWithPatternImage:_backgroudImageView.image];
     
     
     
@@ -59,7 +77,8 @@
     
     // UIBarButtonItemに表示文字列を渡して、インスタンス化します。
     UIBarButtonItem *btn = [[UIBarButtonItem alloc]
-                            initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize
+                            initWithTitle:@"設定"
+                            style:UIBarButtonItemStylePlain
                             target:self
                             action:@selector(gotoSetting:)];
 
@@ -91,6 +110,9 @@
     [self.messages addObject:message];
     
     [self viewDidAppear:YES];
+//    [self.collectionView reloadData];
+//    [self scrollToBottomAnimated:animated];
+
     
 
 //    [self.view addSubview:self.collectionView];
@@ -100,7 +122,7 @@
 //    
 //    NSLog(@"%@", a);
     
-    //ドコモの初期化処理
+    //ドコモの初期化処理 
     [AuthApiKey initializeAuth: @"356a7231614374324d6f6f482e79674c546e2e374d46502f4633676d3279724765582e6d4e6f767a4b2e43"];
     param = [[DialogueRequestParam alloc] init];
     dialogue = [[Dialogue alloc] init];

@@ -16,6 +16,7 @@
 #import "DialogueRequestParam.h"
 #import "DialogueResultData.h"
 #import "SdkError.h"
+#import "JSQMessagesComposerTextView.h"
 
 @interface ViewController : JSQMessagesViewController{
     DialogueRequestParam * param;
@@ -26,7 +27,7 @@
 
 @property (nonatomic, assign) UIImage *backgroundImage;
 @property (nonatomic, assign) UIImage *icon;
-@property (strong, nonatomic) IBOutlet UIImageView *backgroudImageView;
+@property (nonatomic, strong) UIImageView *backgroudImageView;
 
 @end
 

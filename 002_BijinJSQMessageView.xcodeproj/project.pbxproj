@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4689D9121B196A5000B82007 /* libdocomo-dialogue-ios-sdk-2.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4689D90F1B196A5000B82007 /* libdocomo-dialogue-ios-sdk-2.0.0.a */; };
 		4689D9161B1AED4F00B82007 /* Model1_default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4689D9141B1AED4F00B82007 /* Model1_default.jpg */; };
 		4689D9171B1AED4F00B82007 /* Model1_icon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4689D9151B1AED4F00B82007 /* Model1_icon.jpeg */; };
 		4689D9291B1BFE9E00B82007 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 4689D9181B1BFE9D00B82007 /* default.png */; };
@@ -27,6 +26,8 @@
 		4689D9371B1BFE9E00B82007 /* Model8_icon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4689D9261B1BFE9E00B82007 /* Model8_icon.jpeg */; };
 		4689D9381B1BFE9E00B82007 /* Model9_default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4689D9271B1BFE9E00B82007 /* Model9_default.jpg */; };
 		4689D9391B1BFE9E00B82007 /* Model9_icon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4689D9281B1BFE9E00B82007 /* Model9_icon.jpeg */; };
+		4689D93D1B20024700B82007 /* cog_gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 4689D93C1B20024700B82007 /* cog_gear.png */; };
+		4689D9401B2136A600B82007 /* libdocomo-dialogue-ios-sdk-2.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4689D93F1B2136A600B82007 /* libdocomo-dialogue-ios-sdk-2.0.0.a */; };
 		4699183C1B005115001F79EE /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4699183B1B005115001F79EE /* ConfigViewController.m */; };
 		469918591B01A881001F79EE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469918581B01A881001F79EE /* SettingViewController.m */; };
 		4699185C1B021DD0001F79EE /* DefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4699185B1B021DD0001F79EE /* DefaultViewController.m */; };
@@ -39,6 +40,7 @@
 		469F66541AF6232500D6234C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469F66531AF6232500D6234C /* Images.xcassets */; };
 		469F66571AF6232500D6234C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 469F66551AF6232500D6234C /* LaunchScreen.xib */; };
 		469F66631AF6232500D6234C /* _02_BijinJSQMessageViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 469F66621AF6232500D6234C /* _02_BijinJSQMessageViewTests.m */; };
+		FED3237D10F570AA4A4E572C /* libPods-002_BijinJSQMessageView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC372BC5763F24CA4D9AC7D /* libPods-002_BijinJSQMessageView.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,16 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4689D9041B196A5000B82007 /* AuthApiKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthApiKey.h; sourceTree = "<group>"; };
-		4689D9051B196A5000B82007 /* Dialogue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dialogue.h; sourceTree = "<group>"; };
-		4689D9061B196A5000B82007 /* DialogueError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogueError.h; sourceTree = "<group>"; };
-		4689D9071B196A5000B82007 /* DialogueRequestParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogueRequestParam.h; sourceTree = "<group>"; };
-		4689D9081B196A5000B82007 /* DialogueResultData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogueResultData.h; sourceTree = "<group>"; };
-		4689D9091B196A5000B82007 /* OAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuth.h; sourceTree = "<group>"; };
-		4689D90A1B196A5000B82007 /* OAuthError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthError.h; sourceTree = "<group>"; };
-		4689D90B1B196A5000B82007 /* OAuthToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthToken.h; sourceTree = "<group>"; };
-		4689D90C1B196A5000B82007 /* SdkError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SdkError.h; sourceTree = "<group>"; };
-		4689D90F1B196A5000B82007 /* libdocomo-dialogue-ios-sdk-2.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libdocomo-dialogue-ios-sdk-2.0.0.a"; sourceTree = "<group>"; };
+		2BC372BC5763F24CA4D9AC7D /* libPods-002_BijinJSQMessageView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-002_BijinJSQMessageView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4689D9141B1AED4F00B82007 /* Model1_default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Model1_default.jpg; sourceTree = "<group>"; };
 		4689D9151B1AED4F00B82007 /* Model1_icon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Model1_icon.jpeg; sourceTree = "<group>"; };
 		4689D9181B1BFE9D00B82007 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
@@ -81,6 +74,8 @@
 		4689D9261B1BFE9E00B82007 /* Model8_icon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Model8_icon.jpeg; sourceTree = "<group>"; };
 		4689D9271B1BFE9E00B82007 /* Model9_default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Model9_default.jpg; sourceTree = "<group>"; };
 		4689D9281B1BFE9E00B82007 /* Model9_icon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Model9_icon.jpeg; sourceTree = "<group>"; };
+		4689D93C1B20024700B82007 /* cog_gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog_gear.png; sourceTree = "<group>"; };
+		4689D93F1B2136A600B82007 /* libdocomo-dialogue-ios-sdk-2.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libdocomo-dialogue-ios-sdk-2.0.0.a"; sourceTree = "<group>"; };
 		4699183A1B005115001F79EE /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		4699183B1B005115001F79EE /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
 		469918571B01A881001F79EE /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
@@ -91,6 +86,15 @@
 		4699185E1B021E0B001F79EE /* PictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureViewController.m; sourceTree = "<group>"; };
 		469918601B021E51001F79EE /* AlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmViewController.h; sourceTree = "<group>"; };
 		469918611B021E51001F79EE /* AlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmViewController.m; sourceTree = "<group>"; };
+		469B0A6A1B213BFF00AAEB8A /* AuthApiKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthApiKey.h; sourceTree = "<group>"; };
+		469B0A6B1B213BFF00AAEB8A /* Dialogue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dialogue.h; sourceTree = "<group>"; };
+		469B0A6C1B213BFF00AAEB8A /* DialogueError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogueError.h; sourceTree = "<group>"; };
+		469B0A6D1B213BFF00AAEB8A /* DialogueRequestParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogueRequestParam.h; sourceTree = "<group>"; };
+		469B0A6E1B213BFF00AAEB8A /* DialogueResultData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogueResultData.h; sourceTree = "<group>"; };
+		469B0A6F1B213BFF00AAEB8A /* OAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuth.h; sourceTree = "<group>"; };
+		469B0A701B213BFF00AAEB8A /* OAuthError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthError.h; sourceTree = "<group>"; };
+		469B0A711B213BFF00AAEB8A /* OAuthToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthToken.h; sourceTree = "<group>"; };
+		469B0A721B213BFF00AAEB8A /* SdkError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SdkError.h; sourceTree = "<group>"; };
 		469F66401AF6232500D6234C /* 002_BijinJSQMessageView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 002_BijinJSQMessageView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		469F66441AF6232500D6234C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		469F66451AF6232500D6234C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -113,7 +117,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4689D9121B196A5000B82007 /* libdocomo-dialogue-ios-sdk-2.0.0.a in Frameworks */,
+				4689D9401B2136A600B82007 /* libdocomo-dialogue-ios-sdk-2.0.0.a in Frameworks */,
+				FED3237D10F570AA4A4E572C /* libPods-002_BijinJSQMessageView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,26 +132,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4689D9031B196A5000B82007 /* inc */ = {
+		4689D93E1B2136A600B82007 /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				4689D9041B196A5000B82007 /* AuthApiKey.h */,
-				4689D9051B196A5000B82007 /* Dialogue.h */,
-				4689D9061B196A5000B82007 /* DialogueError.h */,
-				4689D9071B196A5000B82007 /* DialogueRequestParam.h */,
-				4689D9081B196A5000B82007 /* DialogueResultData.h */,
-				4689D9091B196A5000B82007 /* OAuth.h */,
-				4689D90A1B196A5000B82007 /* OAuthError.h */,
-				4689D90B1B196A5000B82007 /* OAuthToken.h */,
-				4689D90C1B196A5000B82007 /* SdkError.h */,
-			);
-			path = inc;
-			sourceTree = "<group>";
-		};
-		4689D90D1B196A5000B82007 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				4689D90F1B196A5000B82007 /* libdocomo-dialogue-ios-sdk-2.0.0.a */,
+				4689D93F1B2136A600B82007 /* libdocomo-dialogue-ios-sdk-2.0.0.a */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -154,6 +143,7 @@
 		469918B01B044003001F79EE /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4689D93C1B20024700B82007 /* cog_gear.png */,
 				4689D9181B1BFE9D00B82007 /* default.png */,
 				4689D9191B1BFE9D00B82007 /* Model2_default.jpg */,
 				4689D91A1B1BFE9D00B82007 /* Model2_icon.jpeg */,
@@ -175,6 +165,22 @@
 				4689D9151B1AED4F00B82007 /* Model1_icon.jpeg */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		469B0A691B213BFF00AAEB8A /* inc */ = {
+			isa = PBXGroup;
+			children = (
+				469B0A6A1B213BFF00AAEB8A /* AuthApiKey.h */,
+				469B0A6B1B213BFF00AAEB8A /* Dialogue.h */,
+				469B0A6C1B213BFF00AAEB8A /* DialogueError.h */,
+				469B0A6D1B213BFF00AAEB8A /* DialogueRequestParam.h */,
+				469B0A6E1B213BFF00AAEB8A /* DialogueResultData.h */,
+				469B0A6F1B213BFF00AAEB8A /* OAuth.h */,
+				469B0A701B213BFF00AAEB8A /* OAuthError.h */,
+				469B0A711B213BFF00AAEB8A /* OAuthToken.h */,
+				469B0A721B213BFF00AAEB8A /* SdkError.h */,
+			);
+			path = inc;
 			sourceTree = "<group>";
 		};
 		469F66371AF6232500D6234C = {
@@ -252,8 +258,9 @@
 		63D457A4936C1749DF238E8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4689D9031B196A5000B82007 /* inc */,
-				4689D90D1B196A5000B82007 /* lib */,
+				469B0A691B213BFF00AAEB8A /* inc */,
+				4689D93E1B2136A600B82007 /* lib */,
+				2BC372BC5763F24CA4D9AC7D /* libPods-002_BijinJSQMessageView.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -370,6 +377,7 @@
 				4689D92E1B1BFE9E00B82007 /* Model4_default.jpg in Resources */,
 				4689D9301B1BFE9E00B82007 /* Model5_default.jpg in Resources */,
 				4689D9391B1BFE9E00B82007 /* Model9_icon.jpeg in Resources */,
+				4689D93D1B20024700B82007 /* cog_gear.png in Resources */,
 				4689D92F1B1BFE9E00B82007 /* Model4_icon.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,6 +617,9 @@
 				ARCHS = (
 					"armv7,",
 					armv7s,
+					i386,
+					arm64,
+					x86_64,
 				);
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -624,7 +635,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/002_BijinJSQMessageView.app/002_BijinJSQMessageView";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64 i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -634,6 +645,9 @@
 				ARCHS = (
 					"armv7,",
 					armv7s,
+					i386,
+					arm64,
+					x86_64,
 				);
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -645,7 +659,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/002_BijinJSQMessageView.app/002_BijinJSQMessageView";
-				VALID_ARCHS = "armv7 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64 i386 x86_64";
 			};
 			name = Release;
 		};
