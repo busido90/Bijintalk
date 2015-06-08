@@ -27,7 +27,7 @@
 
 @property (nonatomic, assign) UIImage *backgroundImage;
 @property (nonatomic, assign) UIImage *icon;
-@property (nonatomic, strong) UIImageView *backgroudImageView;
+@property (nonatomic, strong) UIImageView *backgroundImageView;
 
 @end
 

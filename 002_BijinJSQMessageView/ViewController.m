@@ -27,41 +27,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-//    NSLog(@"%f", self.navigationController.navigationBar.bounds.size.height);
-    
     //背景画像設定
-    if (self.backgroudImageView.image == nil) {
+    if (self.backgroundImageView.image == nil) {
         UIImage *image = [UIImage imageNamed:@"Model1_default.jpg"];
-        self.backgroudImageView = [[UIImageView alloc] initWithImage:image];
-//        self.backgroudImageView.frame = [[UIView alloc] init];
-        self.backgroudImageView.frame = CGRectMake(0, self.navigationController.navigationBar.bounds.size.height +20, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
-//        NSLog(@"%f", self.navigationController.navigationBar.bounds.size.height);
-//        NSLog(@"%f", self.view.bounds.size.width);
-//        NSLog(@"%f", self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
-//        [self.navigationController.navigationBar.topItem setTitleView:imageView];
-        
-        
-//        self.backgroudImageView.image = [UIImage imageNamed:@"Model1_default.jpg"];
-//        self.backgroundImage = [UIImage imageNamed:@"Model1_default.jpg"];
-
-//        ViewController *parent = [self.navigationController.viewControllers objectAtIndex:0];
-//        parent.backgroudImageView.image = [UIImage imageNamed:@"Model1_default.jpg"];
-//        parent.icon =z [UIImage imageNamed:@"Model1_icon.jpeg"];
-//        [parent viewDidLoad];
-//        [[self navigationController] animated:YES];
-
-//        self.collectionView.frame = CGRectMake(0, self.navigationController.navigationBar.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
+        self.backgroundImageView = [[UIImageView alloc] initWithImage:image];
+        self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+        self.backgroundImageView.frame = CGRectMake(0, self.navigationController.navigationBar.bounds.size.height +20, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
 
     }
     
-    [self.view addSubview:self.backgroudImageView];
-//    [self.backgroudImageView addSubview:self.collectionView];
-    [self.view sendSubviewToBack:self.backgroudImageView];
     
     //collectionViewを透明にする
     self.collectionView.backgroundColor= [UIColor colorWithWhite:0.0 alpha:0.0];
-//    self.view.backgroundColor = [UIColor colorWithPatternImage:self.backgroundImage];
-//    self.collectionView.backgroundColor= [UIColor colorWithPatternImage:_backgroudImageView.image];
     
     
     
@@ -104,12 +81,15 @@
     
 //    [self finishReceivingMessageAnimated:YES];
 
-    JSQMessage *message = [JSQMessage messageWithSenderId:@"Model"
-                                              displayName:@"underscore"
-                                                     text:@"お元気ですか？"];
-    [self.messages addObject:message];
+//    JSQMessage *message = [JSQMessage messageWithSenderId:@"Model"
+//                                              displayName:@"underscore"
+//                                                     text:@"元気？"];
+//    [self.messages addObject:message];
     
     [self viewDidAppear:YES];
+    
+    [self finishReceivingMessageAnimated:YES];
+
 //    [self.collectionView reloadData];
 //    [self scrollToBottomAnimated:animated];
 
@@ -128,6 +108,12 @@
     dialogue = [[Dialogue alloc] init];
 
     
+    [self.view addSubview:self.backgroundImageView];
+    [self.view sendSubviewToBack:self.backgroundImageView];
+
+    
+    
+    
 }
 
 - (void)gotoSetting:(id)sender
@@ -142,6 +128,16 @@
 {
     [super viewDidAppear:animated];
     self.collectionView.collectionViewLayout.springinessEnabled = YES;
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    JSQMessage *message = [JSQMessage messageWithSenderId:@"Model"
+                                              displayName:@"underscore"
+                                                     text:@"元気？"];
+    [self.messages addObject:message];
+    
+    [self finishReceivingMessageAnimated:YES];
 }
 
 // ⑤ Sendボタンが押下されたときに呼ばれる
@@ -236,10 +232,21 @@
     } onError:^( SdkError *receiveError) {
         NSLog(@"受信エラーコード=%ld",(long) receiveError.code);
         NSLog(@"受信エラー情報=%@", receiveError.localizedDescription);
+        JSQMessage *message = [JSQMessage messageWithSenderId:@"Model"
+                                                  displayName:@"underscore"
+                                                         text:@"え？"];
+        [self.messages addObject:message];
+        [self finishReceivingMessageAnimated:YES];
+        
     }];
     if (sendError) {
         NSLog(@"送信エラーコード=%ld",(long) sendError.code);
         NSLog(@"送信エラー情報=%@", sendError.localizedDescription);
+        JSQMessage *message = [JSQMessage messageWithSenderId:@"Model"
+                                                  displayName:@"underscore"
+                                                         text:@"え？"];
+        [self.messages addObject:message];
+        [self finishReceivingMessageAnimated:YES];
     }
     
     //受信完了処理

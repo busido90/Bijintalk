@@ -22,14 +22,16 @@
     
     NSDictionary *cell0 = @{@"title":@"会話相手を変える"};
 //    NSDictionary *cell1 = @{@"title":@"カスタム"};
-//    NSDictionary *cell2 = @{@"title":@"連絡を定期的的にもらう"};
+    NSDictionary *cell2 = @{@"title":@"Bijin Talk について"};
+    NSDictionary *cell3 = @{@"title":@"Version"};
     
     NSDictionary *section1 = @{@"header":@"会話相手変更", @"data":@[cell0]};
 //    NSDictionary *section1 = @{@"header":@"会話相手変更", @"data":@[cell0, cell1]};
-//    NSDictionary *section2 = @{@"header":@"コール", @"data":@[cell2]};
+    NSDictionary *section2 = @{@"header":@"概要説明", @"data":@[cell2]};
+    NSDictionary *section3 = @{@"header":@"Version管理", @"data":@[cell2]};
     
-//    tableDataList = @[section1, section2];
-    tableDataList = @[section1];
+    tableDataList = @[section1, section2, section3];
+    
 
     
 }
@@ -72,15 +74,6 @@
     return cell;
 }
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([[segue identifier] isEqualToString:@"DefaultViewController"]) {
-//        NSIndexPath *indexPath = [self.SettingTableView indexPathForSelectedRow];
-////        NSDictionary *theSection = tableDataList[indexPath.section];
-////        NSArray *theData = theSection[@"data"];
-////        NSDictionary *theCell = theData[indexPath.row];
-//        
-//    }
-//}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
