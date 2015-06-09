@@ -11,6 +11,7 @@
 @interface ViewController ()
 
 @property (strong, nonatomic) NSMutableArray *messages;
+@property (strong, nonatomic) JSQMessage *message;
 @property (strong, nonatomic) JSQMessagesBubbleImage *incomingBubble;
 @property (strong, nonatomic) JSQMessagesBubbleImage *outgoingBubble;
 @property (strong, nonatomic) JSQMessagesAvatarImage *incomingAvatar;
@@ -79,28 +80,12 @@
     self.inputToolbar.contentView.leftBarButtonItem = nil;
     
     
-//    [self finishReceivingMessageAnimated:YES];
-
-//    JSQMessage *message = [JSQMessage messageWithSenderId:@"Model"
-//                                              displayName:@"underscore"
-//                                                     text:@"元気？"];
-//    [self.messages addObject:message];
+    _message = nil;
     
     [self viewDidAppear:YES];
     
     [self finishReceivingMessageAnimated:YES];
 
-//    [self.collectionView reloadData];
-//    [self scrollToBottomAnimated:animated];
-
-    
-
-//    [self.view addSubview:self.collectionView];
-//    [self.view bringSubviewToFront:self.collectionView];
-    
-//    NSMutableArray *a = self.messages;
-//    
-//    NSLog(@"%@", a);
     
     //ドコモの初期化処理 
     [AuthApiKey initializeAuth: @"356a7231614374324d6f6f482e79674c546e2e374d46502f4633676d3279724765582e6d4e6f767a4b2e43"];
@@ -111,9 +96,6 @@
     [self.view addSubview:self.backgroundImageView];
     [self.view sendSubviewToBack:self.backgroundImageView];
 
-    
-    
-    
 }
 
 - (void)gotoSetting:(id)sender
@@ -132,10 +114,13 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    JSQMessage *message = [JSQMessage messageWithSenderId:@"Model"
+    
+    if (_message == nil) {
+    _message = [JSQMessage messageWithSenderId:@"Model"
                                               displayName:@"underscore"
                                                      text:@"元気？"];
-    [self.messages addObject:message];
+    [self.messages addObject:_message];
+    }
     
     [self finishReceivingMessageAnimated:YES];
 }
@@ -249,16 +234,6 @@
         [self finishReceivingMessageAnimated:YES];
     }
     
-    //受信完了処理
-//    NSLog(@"回答=%@", resultData.utt);
-    // 対話を継続するために context にはサーバから受信した文字列を設定する。
-//    param.context = resultData.context;
-    // サーバー発のしりとりモードを継続するため受信したモードを設定する
-//    param.mode = resultData.mode;
-    // 任意の文字列を会話に設定する
-//    param.utt = @"しりとりしましょう。";
-    // ボタンを押したらリクエストを送信する処理へ
-    
     
     
 //    自分のデータベースとの通信処理(停止中)
@@ -292,41 +267,6 @@
 //                                                    text:resultData.utt];
 //                                                     text:[array valueForKeyPath:@"reply"]];
 //    [self.messages addObject:reply2];
-    
-    
-    
-    //自動に応答しない感じ
-//    if ([say isEqual: @"fine"]) {
-//        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
-//                                                  displayName:@"underscore"
-//                                                         text:@"Good!"];
-//        [self.messages addObject:message];
-//    } else if ([say isEqual: @"Can you marry me?"]) {
-//        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
-//                                                  displayName:@"underscore"
-//                                                         text:@"Sure!"];
-//        [self.messages addObject:message];
-//    } else if ([say isEqual: @"Really?"]) {
-//        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
-//                                                  displayName:@"underscore"
-//                                                         text:@"Really! I love you!!!"];
-//        [self.messages addObject:message];
-//    } else if ([say isEqual: @"おはよう "]) {
-//        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
-//                                                  displayName:@"underscore"
-//                                                         text:@"おはよう!!!"];
-//        [self.messages addObject:message];
-//    } else {
-//        JSQMessage *message = [JSQMessage messageWithSenderId:@"user2"
-//                                                  displayName:@"underscore"
-//                                                         text:@"How are you?"];
-//        [self.messages addObject:message];
-//    }
-
-
-    
-    // メッセージの受信処理を完了する (画面上にメッセージが表示される)
-//    [self finishReceivingMessageAnimated:YES];
 }
 
 - (void) receiveDialogueRequest:(DialogueResultData *) resultData2 {

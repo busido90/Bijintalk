@@ -28,10 +28,9 @@
 		4689D9391B1BFE9E00B82007 /* Model9_icon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4689D9281B1BFE9E00B82007 /* Model9_icon.jpeg */; };
 		4689D93D1B20024700B82007 /* cog_gear.png in Resources */ = {isa = PBXBuildFile; fileRef = 4689D93C1B20024700B82007 /* cog_gear.png */; };
 		4689D9401B2136A600B82007 /* libdocomo-dialogue-ios-sdk-2.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4689D93F1B2136A600B82007 /* libdocomo-dialogue-ios-sdk-2.0.0.a */; };
-		4699183C1B005115001F79EE /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4699183B1B005115001F79EE /* ConfigViewController.m */; };
+		469358081B2538BE009F6708 /* DescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469358071B2538BE009F6708 /* DescriptionViewController.m */; };
 		469918591B01A881001F79EE /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469918581B01A881001F79EE /* SettingViewController.m */; };
 		4699185C1B021DD0001F79EE /* DefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4699185B1B021DD0001F79EE /* DefaultViewController.m */; };
-		4699185F1B021E0B001F79EE /* PictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4699185E1B021E0B001F79EE /* PictureViewController.m */; };
 		469918621B021E51001F79EE /* AlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 469918611B021E51001F79EE /* AlarmViewController.m */; };
 		469F66461AF6232500D6234C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 469F66451AF6232500D6234C /* main.m */; };
 		469F66491AF6232500D6234C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 469F66481AF6232500D6234C /* AppDelegate.m */; };
@@ -76,14 +75,12 @@
 		4689D9281B1BFE9E00B82007 /* Model9_icon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Model9_icon.jpeg; sourceTree = "<group>"; };
 		4689D93C1B20024700B82007 /* cog_gear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cog_gear.png; sourceTree = "<group>"; };
 		4689D93F1B2136A600B82007 /* libdocomo-dialogue-ios-sdk-2.0.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libdocomo-dialogue-ios-sdk-2.0.0.a"; sourceTree = "<group>"; };
-		4699183A1B005115001F79EE /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
-		4699183B1B005115001F79EE /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		469358061B2538BE009F6708 /* DescriptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DescriptionViewController.h; sourceTree = "<group>"; };
+		469358071B2538BE009F6708 /* DescriptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DescriptionViewController.m; sourceTree = "<group>"; };
 		469918571B01A881001F79EE /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		469918581B01A881001F79EE /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		4699185A1B021DD0001F79EE /* DefaultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultViewController.h; sourceTree = "<group>"; };
 		4699185B1B021DD0001F79EE /* DefaultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultViewController.m; sourceTree = "<group>"; };
-		4699185D1B021E0B001F79EE /* PictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureViewController.h; sourceTree = "<group>"; };
-		4699185E1B021E0B001F79EE /* PictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureViewController.m; sourceTree = "<group>"; };
 		469918601B021E51001F79EE /* AlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmViewController.h; sourceTree = "<group>"; };
 		469918611B021E51001F79EE /* AlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmViewController.m; sourceTree = "<group>"; };
 		469B0A6A1B213BFF00AAEB8A /* AuthApiKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthApiKey.h; sourceTree = "<group>"; };
@@ -214,13 +211,11 @@
 				469918581B01A881001F79EE /* SettingViewController.m */,
 				4699185A1B021DD0001F79EE /* DefaultViewController.h */,
 				4699185B1B021DD0001F79EE /* DefaultViewController.m */,
-				4699185D1B021E0B001F79EE /* PictureViewController.h */,
-				4699185E1B021E0B001F79EE /* PictureViewController.m */,
 				469918601B021E51001F79EE /* AlarmViewController.h */,
 				469918611B021E51001F79EE /* AlarmViewController.m */,
-				4699183A1B005115001F79EE /* ConfigViewController.h */,
-				4699183B1B005115001F79EE /* ConfigViewController.m */,
 				469F66501AF6232500D6234C /* Main.storyboard */,
+				469358061B2538BE009F6708 /* DescriptionViewController.h */,
+				469358071B2538BE009F6708 /* DescriptionViewController.m */,
 				469F66531AF6232500D6234C /* Images.xcassets */,
 				469F66551AF6232500D6234C /* LaunchScreen.xib */,
 				469F66431AF6232500D6234C /* Supporting Files */,
@@ -430,11 +425,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				469F66491AF6232500D6234C /* AppDelegate.m in Sources */,
-				4699183C1B005115001F79EE /* ConfigViewController.m in Sources */,
 				469F664F1AF6232500D6234C /* ViewController.m in Sources */,
-				4699185F1B021E0B001F79EE /* PictureViewController.m in Sources */,
 				469918621B021E51001F79EE /* AlarmViewController.m in Sources */,
 				469F66461AF6232500D6234C /* main.m in Sources */,
+				469358081B2538BE009F6708 /* DescriptionViewController.m in Sources */,
 				4699185C1B021DD0001F79EE /* DefaultViewController.m in Sources */,
 				469918591B01A881001F79EE /* SettingViewController.m in Sources */,
 			);

@@ -18,32 +18,54 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    //ステータスバーのサイズ
+    float statusHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    
+    float navigationBar = self.navigationController.navigationBar.bounds.size.height;
+    //ピクチャーのサイズ ※幅の余白は一律10とする
+    float picture_size = (self.view.bounds.size.width - 40) / 3;
+    //heightの余白
+    float height_margin = (statusHeight + navigationBar + (self.view.bounds.size.width / 3 - 10) * 3 ) / 4;
+    
+    
     //タップを有効化する。
     _User1ImageView.userInteractionEnabled = YES;
+    _User1ImageView.frame = CGRectMake(10, statusHeight + navigationBar + height_margin, picture_size, picture_size);
     
     //タップを有効化する。
     _User2ImageView.userInteractionEnabled = YES;
+    _User2ImageView.frame = CGRectMake(10 * 2 + picture_size, statusHeight + navigationBar + height_margin, picture_size, picture_size);
+
     
     //タップを有効化する。
     _User3ImageView.userInteractionEnabled = YES;
+    _User3ImageView.frame = CGRectMake(10 * 3 + picture_size * 2, statusHeight + navigationBar + height_margin, picture_size, picture_size);
+
     
     //タップを有効化する。
     _User4ImageView.userInteractionEnabled = YES;
+    _User4ImageView.frame = CGRectMake(10, statusHeight + navigationBar + height_margin * 2 + picture_size, picture_size, picture_size);
     
     //タップを有効化する。
     _User5ImageView.userInteractionEnabled = YES;
+    _User5ImageView.frame = CGRectMake(10 * 2 + picture_size, statusHeight + navigationBar + height_margin * 2 + picture_size, picture_size, picture_size);
     
     //タップを有効化する。
     _User6ImageView.userInteractionEnabled = YES;
+    _User6ImageView.frame = CGRectMake(10 * 3 + picture_size * 2, statusHeight + navigationBar + height_margin * 2 + picture_size, picture_size, picture_size);
     
     //タップを有効化する。
     _User7ImageView.userInteractionEnabled = YES;
+    _User7ImageView.frame = CGRectMake(10, statusHeight + navigationBar + height_margin * 3 + picture_size * 2, picture_size, picture_size);
     
     //タップを有効化する。
     _User8ImageView.userInteractionEnabled = YES;
+    _User8ImageView.frame = CGRectMake(10 * 2 + picture_size, statusHeight + navigationBar + height_margin * 3 + picture_size * 2, picture_size, picture_size);
     
     //タップを有効化する。
     _User9ImageView.userInteractionEnabled = YES;
+    _User9ImageView.frame = CGRectMake(10 * 3 + picture_size * 2, statusHeight + navigationBar + height_margin * 3 + picture_size * 2, picture_size, picture_size);
+    
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

@@ -10,6 +10,7 @@
 #import "DefaultViewController.h"
 #import "PictureViewController.h"
 #import "AlarmViewController.h"
+#import "DescriptionViewController.h"
 
 
 @interface SettingViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {

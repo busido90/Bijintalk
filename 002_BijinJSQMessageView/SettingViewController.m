@@ -23,12 +23,12 @@
     NSDictionary *cell0 = @{@"title":@"会話相手を変える"};
 //    NSDictionary *cell1 = @{@"title":@"カスタム"};
     NSDictionary *cell2 = @{@"title":@"Bijin Talk について"};
-    NSDictionary *cell3 = @{@"title":@"Version"};
+    NSDictionary *cell3 = @{@"title":@"Version 1.0.0"};
     
     NSDictionary *section1 = @{@"header":@"会話相手変更", @"data":@[cell0]};
 //    NSDictionary *section1 = @{@"header":@"会話相手変更", @"data":@[cell0, cell1]};
     NSDictionary *section2 = @{@"header":@"概要説明", @"data":@[cell2]};
-    NSDictionary *section3 = @{@"header":@"Version管理", @"data":@[cell2]};
+    NSDictionary *section3 = @{@"header":@"Version管理", @"data":@[cell3]};
     
     tableDataList = @[section1, section2, section3];
     
@@ -69,7 +69,9 @@
     
     cell.textLabel.text = theCell[@"title"];
     
-    NSLog(@"%ld%ld", (long)indexPath.section, (long)indexPath.row);
+    if (indexPath.section == 2 && indexPath.row == 0) {
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
     
     return cell;
 }
@@ -83,8 +85,8 @@
 
     } else if (indexPath.section == 0 && indexPath.row == 1) {
     } else if (indexPath.section == 1 && indexPath.row == 0) {
-//        DefaultViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"AlarmViewController"];
-//        [[self navigationController] pushViewController:dvc animated:YES];
+        DescriptionViewController *dvc = [self.storyboard instantiateViewControllerWithIdentifier:@"DescriptionViewController"];
+        [[self navigationController] pushViewController:dvc animated:YES];
     } else {
         
     }
