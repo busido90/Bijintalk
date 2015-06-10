@@ -25,7 +25,7 @@
     //ピクチャーのサイズ ※幅の余白は一律10とする
     float picture_size = (self.view.bounds.size.width - 40) / 3;
     //heightの余白
-    float height_margin = (statusHeight + navigationBar + (self.view.bounds.size.width / 3 - 10) * 3 ) / 4;
+    float height_margin = (self.view.bounds.size.height - (statusHeight + navigationBar + picture_size * 3 )) / 4;
     
     
     //タップを有効化する。

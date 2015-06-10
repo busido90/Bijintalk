@@ -17,7 +17,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="611.20000000000005" y="305.77333333333331"/>
+            <point key="canvasLocation" x="283" y="295"/>
         </scene>
         <!--設定-->
         <scene sceneID="sJV-9W-b6l">
@@ -44,7 +44,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vab-2v-Qdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836.79999999999995" y="305.77333333333331"/>
+            <point key="canvasLocation" x="672" y="295"/>
         </scene>
         <!--アラーム-->
         <scene sceneID="Cay-dU-U72">
@@ -230,7 +230,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32G-0G-PQN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162.66666666666666" y="305.77333333333331"/>
+            <point key="canvasLocation" x="-65" y="295"/>
         </scene>
     </scenes>
     <resources>

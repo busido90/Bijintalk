@@ -20,6 +20,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    //mainscreen
+    CGRect screen = [[UIScreen mainScreen] bounds];
+    self.view.bounds = screen;
+    
     
     
     self.AlarmTableView.dataSource = self;

@@ -28,12 +28,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    //ステータスバーのサイズ
+    float statusHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    
+    float navigationBar = self.navigationController.navigationBar.bounds.size.height;
+    
+    //mainscreen
+    CGRect screen = [[UIScreen mainScreen] bounds];
+    self.view.bounds = screen;
+    
     //背景画像設定
     if (self.backgroundImageView.image == nil) {
         UIImage *image = [UIImage imageNamed:@"Model1_default.jpg"];
         self.backgroundImageView = [[UIImageView alloc] initWithImage:image];
         self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
-        self.backgroundImageView.frame = CGRectMake(0, self.navigationController.navigationBar.bounds.size.height +20, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
+        self.backgroundImageView.frame = CGRectMake(0, statusHeight + navigationBar, screen.size.width, screen.size.height - navigationBar - statusHeight);
 
     }
     

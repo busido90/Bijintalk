@@ -20,6 +20,13 @@
     self.SettingTableView.dataSource = self;
     self.SettingTableView.delegate = self;
     
+    //ステータスバーのサイズ
+    float statusHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    
+    float navigationBar = self.navigationController.navigationBar.bounds.size.height;
+    
+    self.SettingTableView.frame = CGRectMake(0, statusHeight + navigationBar, self.view.bounds.size.width, self.view.bounds.size.height - navigationBar - statusHeight);
+    
     NSDictionary *cell0 = @{@"title":@"会話相手を変える"};
 //    NSDictionary *cell1 = @{@"title":@"カスタム"};
     NSDictionary *cell2 = @{@"title":@"Bijin Talk について"};

@@ -17,6 +17,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //mainscreen
+    CGRect screen = [[UIScreen mainScreen] bounds];
+    self.view.bounds = screen;
+    
     DescriptionTextView = [[UITextView alloc] init];
     DescriptionTextView.frame = CGRectMake(0, self.navigationController.navigationBar.bounds.size.height +20, self.view.bounds.size.width, self.view.bounds.size.height - self.navigationController.navigationBar.bounds.size.height);
     DescriptionTextView.text = @"Bijin Talk は自動応答生成でユーザにリプライを返してくれる雑談対話アプリケーションです。美男・美女・美動物たちがあなたに変身してれます！Docomoの雑談対話APIを使用しています。ユーザの名前を認識する機能は今後搭載予定です。現状はただの雑談をお楽しみください。";
